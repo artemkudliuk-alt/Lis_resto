@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>LIS Restaurant & Lounge | Відео-меню Ribas Karpaty</title>
+  <meta name="description" content="Інтерактивне відео-меню ресторану LIS у готелі Ribas Karpaty (Буковель). Обирайте страви та коктейлі у динамічному відео-форматі 9:16.">
+  <meta name="theme-color" content="#2B2436">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Google Fonts: Outfit (Headings & Brand) + Manrope & Inter (UI Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <!-- Main Mobile Container -->
+  <div class="mobile-wrapper" id="app">
+    
+    <!-- Top Header (Ribas Karpaty / LIS Style) -->
+    <header class="app-header">
+      <div class="header-top">
+        <div class="brand-block">
+          <div class="brand-logo">LIS</div>
+          <div class="brand-sub">
+            <span class="hotel-name">RIBAS KARPATY</span>
+            <span class="location-badge">📍 БУКОВЕЛЬ</span>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button class="icon-btn" id="search-toggle-btn" aria-label="Пошук страви" title="Пошук">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <div class="table-tag">Стіл #12</div>
+        </div>
+      </div>
+
+      <!-- Search Bar (Collapsible) -->
+      <div class="search-bar-container" id="search-bar">
+        <div class="search-input-wrapper">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8D98AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="dish-search-input" placeholder="Пошук за назвою або інгредієнтом..." autocomplete="off">
+          <button class="clear-search-btn" id="clear-search-btn">&times;</button>
+        </div>
+      </div>
+
+      <!-- 3-Column Category Tiles Selector (Плитки категорій по 3 в ряд) -->
+      <div class="category-tiles-container">
+        <div class="category-tiles-grid" id="category-tiles-grid">
+          <!-- Rendered via JavaScript -->
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area: Compact 2-Column Dish Grid -->
+    <main class="menu-content" id="menu-content">
+      <!-- Section Banner / Intro -->
+      <section class="section-intro" id="active-category-intro">
+        <h1 class="category-heading" id="category-title">Всі позиції меню</h1>
+        <span class="items-counter" id="items-counter">11 страв</span>
+      </section>
+
+      <!-- Dishes Grid: 2 Columns Compact Tiles -->
+      <div class="dishes-grid" id="dishes-container">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </main>
+
+    <!-- Bottom Mobile Navigation Bar -->
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-tab="menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 3h7v7H3z"></path>
+          <path d="M14 3h7v7h-7z"></path>
+          <path d="M14 14h7v7h-7z"></path>
+          <path d="M3 14h7v7H3z"></path>
+        </svg>
+        <span>Меню</span>
+      </button>
+      <button class="nav-item" id="open-video-stories-btn">
+        <div class="stories-icon-wrapper">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+        </div>
+        <span>Відео-стрічка</span>
+      </button>
+      <button class="nav-item" id="call-waiter-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+        <span>Офіціант</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Fullscreen 9:16 Video Player Modal (TikTok / Reels UI) -->
+  <div class="video-modal" id="video-modal" aria-hidden="true" role="dialog">
+    <div class="video-container">
+      
+      <!-- Video Element -->
+      <video id="modal-video" class="modal-video-player" playsinline loop preload="auto" poster="assets/images/burger_poster.jpg">
+        <source src="assets/videos/burger_.mp4" type="video/mp4">
+        Ваш браузер не підтримує відео.
+      </video>
+
+      <!-- Video Loading Spinner -->
+      <div class="video-loader" id="video-loader">
+        <div class="spinner"></div>
+      </div>
+
+      <!-- Top Overlay Controls -->
+      <div class="video-top-bar">
+        <button class="video-control-btn close-btn" id="close-video-modal" aria-label="Закрити відео">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <div class="video-category-badge" id="modal-category-badge">ХОСПЕР</div>
+
+        <button class="video-control-btn sound-btn" id="toggle-sound-btn" aria-label="Звук">
+          <svg id="sound-icon-muted" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+          <svg id="sound-icon-unmuted" class="hidden" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Side Quick Interaction Buttons (Like / Share / Info) -->
+      <div class="video-side-actions">
+        <button class="side-action-btn like-btn" id="like-dish-btn" aria-label="Додати в улюблене">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="action-count" id="like-count">128</span>
+        </button>
+
+        <button class="side-action-btn" id="info-drawer-btn" aria-label="Склад страви">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <span>Склад</span>
+        </button>
+      </div>
+
+      <!-- Navigation Arrows for Desktop / Swipe Hint for Mobile -->
+      <button class="video-nav-btn prev" id="video-prev-btn" aria-label="Попередня страва">‹</button>
+      <button class="video-nav-btn next" id="video-next-btn" aria-label="Наступна страва">›</button>
+
+      <!-- Bottom Glassmorphism Overlay (Reels / TikTok Style) -->
+      <div class="video-bottom-overlay">
+        <div class="overlay-main-info" id="overlay-tap-target">
+          <div class="overlay-tags" id="modal-tags">
+            <span class="tag-badge hit">🔥 Хіт ресторану</span>
+            <span class="tag-badge chef">👑 Chef's Choice</span>
+          </div>
+
+          <h2 class="modal-dish-title" id="modal-dish-title">Фірмовий бургер LIS</h2>
+          
+          <div class="modal-dish-meta">
+            <div class="modal-price-tag" id="modal-dish-price">530 ₴</div>
+            <div class="modal-weight-tag" id="modal-dish-weight">450 г</div>
+          </div>
+
+          <p class="modal-short-desc" id="modal-dish-short-desc">
+            Соковита яловича котлета на вугіллі хоспера, карамелізована цибуля, чеддер та фірмові діпи.
+          </p>
+
+          <div class="expand-hint">
+            <span class="hint-text">Натисніть для перегляду повного складу</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expandable Composition Bottom Sheet (Drawer) -->
+      <div class="composition-drawer" id="composition-drawer">
+        <div class="drawer-handle-bar">
+          <div class="drawer-handle"></div>
+        </div>
+        
+        <div class="drawer-header">
+          <h3 class="drawer-title" id="drawer-dish-name">Склад та особливості страви</h3>
+          <button class="close-drawer-btn" id="close-drawer-btn">&times;</button>
+        </div>
+
+        <div class="drawer-body">
+          <div class="composition-section">
+            <h4 class="section-label">Інгредієнти та приготування:</h4>
+            <p class="composition-text" id="drawer-composition">
+              100% сортова яловичина на живому вугіллі хоспера (350°C), томлена карамелізована цибуля в бурштиновій глазурі, ніжний розплавлений сир чеддер, хрустка золотиста бріош, картопляні діпи, соус BBQ та трюфельний майонез.
+            </p>
+          </div>
+
+          <div class="composition-section" id="drawer-allergens-section">
+            <h4 class="section-label">Алергени:</h4>
+            <div class="allergens-list" id="drawer-allergens">
+              <span class="allergen-pill">Глютен</span>
+              <span class="allergen-pill">Лактоза</span>
+              <span class="allergen-pill">Гірчиця</span>
+            </div>
+          </div>
+
+          <div class="composition-section nutrition-section">
+            <h4 class="section-label">Енергетична цінність:</h4>
+            <div class="nutrition-grid" id="drawer-nutrition">
+              <div class="nutrition-item">
+                <span class="val">840</span>
+                <span class="lbl">ккал</span>
+              </div>
+              <div class="nutrition-item">
+                <span class="val">42 г</span>
+                <span class="lbl">білки</span>
+              </div>
+              <div class="nutrition-item">
+                <span class="val">48 г</span>
+                <span class="lbl">жири</span>
+              </div>
+              <div class="nutrition-item">
+                <span class="val">62 г</span>
+                <span class="lbl">вуглеводи</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Modal for Waiter Call -->
+  <div class="toast-notification" id="toast">
+    <span class="toast-icon">🛎️</span>
+    <span class="toast-text" id="toast-text">Офіціанта викликано до столу #12!</span>
+  </div>
+
+  <script src="app.js?v=3"></script>
+</body>
+</html>

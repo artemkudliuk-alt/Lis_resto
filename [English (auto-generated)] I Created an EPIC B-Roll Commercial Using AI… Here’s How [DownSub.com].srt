@@ -1,0 +1,1295 @@
+1
+00:00:00,000 --> 00:00:01,920
+Today, I'm showing you how to use AI
+
+2
+00:00:01,920 --> 00:00:04,040
+tools to make a professional commercial
+
+3
+00:00:04,040 --> 00:00:07,400
+that looks like this.
+
+4
+00:00:17,030 --> 00:00:19,050
+>> [music]
+
+5
+00:00:25,360 --> 00:00:26,800
+>> Welcome back to the channel, and if
+
+6
+00:00:26,800 --> 00:00:28,560
+you're new here, my name is Thomas, and
+
+7
+00:00:28,560 --> 00:00:30,280
+I make videos about AI product
+
+8
+00:00:30,280 --> 00:00:32,080
+photography. In my previous video, I
+
+9
+00:00:32,080 --> 00:00:34,120
+tested Nano Banana 2 for food
+
+10
+00:00:34,120 --> 00:00:36,440
+photography for a burger chain I made
+
+11
+00:00:36,440 --> 00:00:38,760
+up, and doing that sparked an idea in my
+
+12
+00:00:38,760 --> 00:00:40,880
+head. I wanted to see if I could create
+
+13
+00:00:40,880 --> 00:00:44,520
+an epic B-roll style food commercial
+
+14
+00:00:44,520 --> 00:00:46,880
+only using AI tools. So, I started
+
+15
+00:00:46,880 --> 00:00:49,560
+searching for epic B-roll commercials on
+
+16
+00:00:49,560 --> 00:00:51,920
+YouTube and landed on this epic pizza
+
+17
+00:00:51,920 --> 00:00:54,200
+B-roll by Daniel Schiffer. I wanted to
+
+18
+00:00:54,200 --> 00:00:56,240
+see if I could create something of
+
+19
+00:00:56,240 --> 00:00:58,560
+similar quality without even touching a
+
+20
+00:00:58,560 --> 00:01:00,680
+camera or leaving my house, but only
+
+21
+00:01:00,680 --> 00:01:02,960
+using AI tools. First of all, we needed
+
+22
+00:01:02,960 --> 00:01:05,040
+a pizza and a pizza brand to create the
+
+23
+00:01:05,040 --> 00:01:06,840
+commercial around, so that's how I
+
+24
+00:01:06,840 --> 00:01:09,600
+created La Pizza The Subscribe. From
+
+25
+00:01:09,600 --> 00:01:11,400
+there, the next step was to start
+
+26
+00:01:11,400 --> 00:01:13,560
+creating the individual frames of the
+
+27
+00:01:13,560 --> 00:01:15,520
+different clips from the commercial. To
+
+28
+00:01:15,520 --> 00:01:17,760
+generate the images and videos in this
+
+29
+00:01:17,760 --> 00:01:20,480
+commercial, I used Higgsfield AI, and
+
+30
+00:01:20,480 --> 00:01:22,960
+this video is not sponsored by them, but
+
+31
+00:01:22,960 --> 00:01:24,800
+if you want to do this for yourself, I
+
+32
+00:01:24,800 --> 00:01:26,560
+think I have a discount code in the
+
+33
+00:01:26,560 --> 00:01:28,480
+description below. I really liked the
+
+34
+00:01:28,480 --> 00:01:30,400
+intro in Daniel Schiffer's commercial,
+
+35
+00:01:30,400 --> 00:01:32,240
+so I started by taking some inspiration
+
+36
+00:01:32,240 --> 00:01:34,600
+from that and taking screenshots of the
+
+37
+00:01:34,600 --> 00:01:37,800
+frames and asking ChatGPT to describe a
+
+38
+00:01:37,800 --> 00:01:40,360
+similar scene, but with my brand colors.
+
+39
+00:01:40,360 --> 00:01:42,080
+Then, using the prompts that we got from
+
+40
+00:01:42,080 --> 00:01:44,880
+ChatGPT, I used Nano Banana Pro to
+
+41
+00:01:44,880 --> 00:01:47,640
+create frames for the three first shots
+
+42
+00:01:47,640 --> 00:01:49,280
+of the commercial. For the next three
+
+43
+00:01:49,280 --> 00:01:50,960
+shots, I wanted a sequence where the
+
+44
+00:01:50,960 --> 00:01:53,400
+chef's hand is pouring and spreading the
+
+45
+00:01:53,400 --> 00:01:55,640
+tomato sauce on the pizza dough. And
+
+46
+00:01:55,640 --> 00:01:57,840
+already before creating the motion for
+
+47
+00:01:57,840 --> 00:02:00,280
+the frames, I had in mind what type of
+
+48
+00:02:00,280 --> 00:02:03,000
+movement I wanted to see in the sequence
+
+49
+00:02:03,000 --> 00:02:05,160
+in order for the clips to flow together
+
+50
+00:02:05,160 --> 00:02:07,520
+in a nice way in the final edit. During
+
+51
+00:02:07,520 --> 00:02:09,360
+the short sequence of three clips, I
+
+52
+00:02:09,360 --> 00:02:11,440
+wanted a hand to move from left to right
+
+53
+00:02:11,440 --> 00:02:14,240
+and then finally cut to an overhead shot
+
+54
+00:02:14,240 --> 00:02:16,040
+with the finalizing touches of the
+
+55
+00:02:16,040 --> 00:02:18,160
+movement. The next three shots was the
+
+56
+00:02:18,160 --> 00:02:20,480
+cheese dripping down, the chef cutting
+
+57
+00:02:20,480 --> 00:02:22,760
+the mushroom, and then the pepperoni
+
+58
+00:02:22,760 --> 00:02:24,880
+falling towards the pizza. The cheese
+
+59
+00:02:24,880 --> 00:02:26,400
+and pepperoni one weren't that
+
+60
+00:02:26,400 --> 00:02:27,959
+complicated to create, but for the
+
+61
+00:02:27,959 --> 00:02:30,080
+mushroom one, I knew that I could create
+
+62
+00:02:30,080 --> 00:02:32,560
+a start and end frame for the action
+
+63
+00:02:32,560 --> 00:02:34,400
+that would then flow perfectly when you
+
+64
+00:02:34,400 --> 00:02:36,360
+animate it. I was able to create the
+
+65
+00:02:36,360 --> 00:02:38,000
+last frame of the shot where the
+
+66
+00:02:38,000 --> 00:02:40,760
+mushroom is being cut quite easily, but
+
+67
+00:02:40,760 --> 00:02:43,160
+for some reason, I was really struggling
+
+68
+00:02:43,160 --> 00:02:44,920
+by creating the first frame where the
+
+69
+00:02:44,920 --> 00:02:47,040
+chef is holding the knife like this. So,
+
+70
+00:02:47,040 --> 00:02:48,920
+here's a pro tip for you, how to get a
+
+71
+00:02:48,920 --> 00:02:51,200
+really specific angle that might be hard
+
+72
+00:02:51,200 --> 00:02:53,600
+to explain to an AI. So, what I did was
+
+73
+00:02:53,600 --> 00:02:56,520
+I took an iPhone photo of me holding up
+
+74
+00:02:56,520 --> 00:02:59,320
+the knife like this, and then uploaded
+
+75
+00:02:59,320 --> 00:03:01,959
+that to Nano Banana Pro and asked it to
+
+76
+00:03:01,959 --> 00:03:04,280
+turn it into a sketch. Now, by doing
+
+77
+00:03:04,280 --> 00:03:06,320
+this, I had a sketch of the image I
+
+78
+00:03:06,320 --> 00:03:09,080
+wanted, and I could use the last frame
+
+79
+00:03:09,080 --> 00:03:12,120
+as a style reference for the sketch. So,
+
+80
+00:03:12,120 --> 00:03:14,480
+I asked Nano Banana Pro to create a
+
+81
+00:03:14,480 --> 00:03:17,080
+photorealistic image of the sketch in
+
+82
+00:03:17,080 --> 00:03:19,800
+the exact same environment as the last
+
+83
+00:03:19,800 --> 00:03:21,800
+frame, and this is the result we got.
+
+84
+00:03:21,800 --> 00:03:23,360
+So, this is something you can do in
+
+85
+00:03:23,360 --> 00:03:25,440
+other instances as well. If you're
+
+86
+00:03:25,440 --> 00:03:27,680
+struggling to get the AI to understand
+
+87
+00:03:27,680 --> 00:03:30,200
+you, try uploading a sketch of the exact
+
+88
+00:03:30,200 --> 00:03:32,680
+composition you want, and then a style
+
+89
+00:03:32,680 --> 00:03:34,320
+reference where it can pull the
+
+90
+00:03:34,320 --> 00:03:36,720
+photographic style onto that sketch.
+
+91
+00:03:36,720 --> 00:03:38,880
+Next up, I knew I wanted a few close-up
+
+92
+00:03:38,880 --> 00:03:41,519
+frames of the purple onion being placed
+
+93
+00:03:41,519 --> 00:03:43,959
+on the pizza and then transitioning into
+
+94
+00:03:43,959 --> 00:03:46,320
+the chef picking it up with the pizza
+
+95
+00:03:46,320 --> 00:03:48,880
+shovel. Pizza shovel, pizza peel, you
+
+96
+00:03:48,880 --> 00:03:50,640
+know, the thing that you pick up the
+
+97
+00:03:50,640 --> 00:03:52,480
+pizza with. For the frame of the hand
+
+98
+00:03:52,480 --> 00:03:54,280
+picking up the purple onion from the
+
+99
+00:03:54,280 --> 00:03:56,320
+jar, I actually used a previous
+
+100
+00:03:56,320 --> 00:03:59,040
+generation version of the hand holding
+
+101
+00:03:59,040 --> 00:04:02,000
+the cheese that I ended up not using.
+
+102
+00:04:02,000 --> 00:04:04,560
+So, in this way, you can also kind of
+
+103
+00:04:04,560 --> 00:04:07,840
+form your style as you go and use
+
+104
+00:04:07,840 --> 00:04:10,240
+generations that maybe wasn't fit for
+
+105
+00:04:10,240 --> 00:04:12,440
+one purpose, and you can use it to
+
+106
+00:04:12,440 --> 00:04:14,200
+generate something else. Then, for the
+
+107
+00:04:14,200 --> 00:04:16,480
+last shots of the commercial, we needed
+
+108
+00:04:16,480 --> 00:04:18,799
+frames for the shots where the chef is
+
+109
+00:04:18,799 --> 00:04:21,120
+putting the pizza inside the oven, the
+
+110
+00:04:21,120 --> 00:04:23,919
+pizza being baked in the oven, and then
+
+111
+00:04:23,919 --> 00:04:26,000
+the final product being presented to the
+
+112
+00:04:26,000 --> 00:04:28,200
+camera. And for these final frames, I
+
+113
+00:04:28,200 --> 00:04:30,800
+actually first didn't have the idea of
+
+114
+00:04:30,800 --> 00:04:33,480
+having the time-lapse transition between
+
+115
+00:04:33,480 --> 00:04:35,800
+the unbaked and the baked pizza, but
+
+116
+00:04:35,800 --> 00:04:37,680
+this is something also where AI
+
+117
+00:04:37,680 --> 00:04:40,160
+workflows are really powerful because
+
+118
+00:04:40,160 --> 00:04:42,360
+when you jump into the editing and find
+
+119
+00:04:42,360 --> 00:04:44,400
+out that you need something else or need
+
+120
+00:04:44,400 --> 00:04:46,240
+a completely different shot, then you
+
+121
+00:04:46,240 --> 00:04:48,040
+can just create it instead of being
+
+122
+00:04:48,040 --> 00:04:49,800
+stuck in a position where you don't have
+
+123
+00:04:49,800 --> 00:04:51,440
+the material from the day you were
+
+124
+00:04:51,440 --> 00:04:53,600
+shooting the actual commercial. When we
+
+125
+00:04:53,600 --> 00:04:55,280
+had generated all the frames for the
+
+126
+00:04:55,280 --> 00:04:57,320
+different shots of the commercial, it
+
+127
+00:04:57,320 --> 00:04:59,680
+was time to start animating them using
+
+128
+00:04:59,680 --> 00:05:02,200
+Kling 3.0. The process looks pretty much
+
+129
+00:05:02,200 --> 00:05:04,720
+the same as when creating the frames for
+
+130
+00:05:04,720 --> 00:05:07,880
+the commercial. First, I go to ChatGPT
+
+131
+00:05:07,880 --> 00:05:10,120
+and tell it that I'm using Kling 3.0 and
+
+132
+00:05:10,120 --> 00:05:12,440
+want to create this type of shot using
+
+133
+00:05:12,440 --> 00:05:15,040
+this image. This way, I will get quite a
+
+134
+00:05:15,040 --> 00:05:17,680
+good base prompt to use along with the
+
+135
+00:05:17,680 --> 00:05:20,000
+image in Kling 3.0. Now, for this
+
+136
+00:05:20,000 --> 00:05:22,160
+commercial specifically, and I recommend
+
+137
+00:05:22,160 --> 00:05:23,520
+you do this for most product
+
+138
+00:05:23,520 --> 00:05:26,080
+commercials, I asked specifically for
+
+139
+00:05:26,080 --> 00:05:28,640
+super slow motion shots. The reason we
+
+140
+00:05:28,640 --> 00:05:31,120
+do this is because when we jump into the
+
+141
+00:05:31,120 --> 00:05:32,880
+editing software, we have more
+
+142
+00:05:32,880 --> 00:05:35,160
+flexibility when we want to re-time the
+
+143
+00:05:35,160 --> 00:05:37,760
+clip if it's already in slow motion. If
+
+144
+00:05:37,760 --> 00:05:40,320
+we generate clips in normal speed using
+
+145
+00:05:40,320 --> 00:05:42,880
+Kling 3.0, we can't in the editing
+
+146
+00:05:42,880 --> 00:05:45,440
+software slow it down to slow motion
+
+147
+00:05:45,440 --> 00:05:48,120
+without getting some artifacts. So,
+
+148
+00:05:48,120 --> 00:05:50,880
+asking for a slow motion clip is usually
+
+149
+00:05:50,880 --> 00:05:52,320
+better because it gives you more
+
+150
+00:05:52,320 --> 00:05:54,880
+flexibility when re-timing the clips
+
+151
+00:05:54,880 --> 00:05:56,880
+later. And when generating video clips
+
+152
+00:05:56,880 --> 00:05:59,920
+using Kling 3.0 or basically any video
+
+153
+00:05:59,920 --> 00:06:02,240
+generator for that matter, it's a bit of
+
+154
+00:06:02,240 --> 00:06:03,920
+a trial and error. You have to tweak the
+
+155
+00:06:03,920 --> 00:06:06,480
+prompt sometimes because usually it's
+
+156
+00:06:06,480 --> 00:06:08,960
+not perfect on the first generation and
+
+157
+00:06:08,960 --> 00:06:11,440
+even doing two generations with the
+
+158
+00:06:11,440 --> 00:06:13,640
+exact same prompt might give you a
+
+159
+00:06:13,640 --> 00:06:15,680
+slightly different result. And this can
+
+160
+00:06:15,680 --> 00:06:17,400
+definitely be frustrating if you're
+
+161
+00:06:17,400 --> 00:06:19,480
+trying to do just a simple action. For
+
+162
+00:06:19,480 --> 00:06:22,040
+example, when I wanted the hand to take
+
+163
+00:06:22,040 --> 00:06:25,160
+the sauce out of the bucket, it kept on
+
+164
+00:06:25,160 --> 00:06:27,840
+generating the hand pouring the sauce
+
+165
+00:06:27,840 --> 00:06:30,600
+into the bucket, which wasn't what I was
+
+166
+00:06:30,600 --> 00:06:33,040
+looking for. So, sometimes you have to
+
+167
+00:06:33,040 --> 00:06:35,480
+be a bit creative and maybe using like a
+
+168
+00:06:35,480 --> 00:06:38,280
+start and end frame to lock in that
+
+169
+00:06:38,280 --> 00:06:40,760
+motion, like I did in the knife example,
+
+170
+00:06:40,760 --> 00:06:42,840
+which basically was, I think, two
+
+171
+00:06:42,840 --> 00:06:45,240
+generations and I got it perfect. But if
+
+172
+00:06:45,240 --> 00:06:46,800
+I can give you any tips from my
+
+173
+00:06:46,800 --> 00:06:49,720
+experience and struggle of using these
+
+174
+00:06:49,720 --> 00:06:52,200
+tools, I can tell you that it's never
+
+175
+00:06:52,200 --> 00:06:54,880
+good to trying to force the AI to follow
+
+176
+00:06:54,880 --> 00:06:57,600
+your instructions. If you notice that it
+
+177
+00:06:57,600 --> 00:07:00,240
+keeps on doing the same mistake, then
+
+178
+00:07:00,240 --> 00:07:02,880
+maybe take another approach or use a
+
+179
+00:07:02,880 --> 00:07:05,800
+start and end frame to really lock that
+
+180
+00:07:05,800 --> 00:07:08,240
+specific motion in. Otherwise, you can
+
+181
+00:07:08,240 --> 00:07:09,960
+get stuck in a loop where you're just
+
+182
+00:07:09,960 --> 00:07:12,440
+trying to get it to understand what you
+
+183
+00:07:12,440 --> 00:07:15,600
+want and sometimes it just doesn't. And
+
+184
+00:07:15,600 --> 00:07:17,480
+another tip I would give you is try to
+
+185
+00:07:17,480 --> 00:07:20,160
+look at the individual clips more like a
+
+186
+00:07:20,160 --> 00:07:22,320
+photographer. So, they don't have to be
+
+187
+00:07:22,320 --> 00:07:24,760
+perfect from start to finish every
+
+188
+00:07:24,760 --> 00:07:26,919
+single second, but maybe there's a three
+
+189
+00:07:26,919 --> 00:07:29,400
+or five second slice of the clip that
+
+190
+00:07:29,400 --> 00:07:31,840
+can be used. And in that way, if you
+
+191
+00:07:31,840 --> 00:07:33,800
+bring it to the editing software, you
+
+192
+00:07:33,800 --> 00:07:36,840
+can still have some good material from
+
+193
+00:07:36,840 --> 00:07:39,040
+the slightly wonky clip. For example,
+
+194
+00:07:39,040 --> 00:07:41,200
+when making this commercial, there were
+
+195
+00:07:41,200 --> 00:07:43,920
+several of the shots that was kind of
+
+196
+00:07:43,920 --> 00:07:46,720
+wonky at times, but then they had this
+
+197
+00:07:46,720 --> 00:07:49,680
+2-second slice that was perfect and
+
+198
+00:07:49,680 --> 00:07:52,120
+exactly what I was looking for. So, I
+
+199
+00:07:52,120 --> 00:07:54,480
+used that part and then just discarded
+
+200
+00:07:54,480 --> 00:07:56,920
+the rest in post-production. Now that we
+
+201
+00:07:56,920 --> 00:07:58,920
+had generated all the clips using Kling
+
+202
+00:07:58,920 --> 00:08:01,040
+3.0, it was time to jump into the
+
+203
+00:08:01,040 --> 00:08:02,920
+editing software and cut them all
+
+204
+00:08:02,920 --> 00:08:05,440
+together with music and sound effects.
+
+205
+00:08:05,440 --> 00:08:07,520
+This is what the timeline looks like in
+
+206
+00:08:07,520 --> 00:08:09,840
+my editing software for the commercial.
+
+207
+00:08:09,840 --> 00:08:11,560
+I have used very basic editing
+
+208
+00:08:11,560 --> 00:08:13,680
+techniques that you can use in basically
+
+209
+00:08:13,680 --> 00:08:16,280
+any editing software that you like. So,
+
+210
+00:08:16,280 --> 00:08:18,360
+for example, CapCut, Final Cut Pro,
+
+211
+00:08:18,360 --> 00:08:21,320
+Premiere Pro, or DaVinci Resolve all can
+
+212
+00:08:21,320 --> 00:08:23,240
+do these things that I'm about to show
+
+213
+00:08:23,240 --> 00:08:25,720
+you. The first thing I usually do is
+
+214
+00:08:25,720 --> 00:08:27,919
+select a music track that I want to use
+
+215
+00:08:27,919 --> 00:08:30,200
+because that way you can edit to the
+
+216
+00:08:30,200 --> 00:08:32,599
+music and cut to the beat, which makes
+
+217
+00:08:32,599 --> 00:08:34,560
+it feel so much more professional if
+
+218
+00:08:34,560 --> 00:08:36,599
+your visuals actually flow with the
+
+219
+00:08:36,599 --> 00:08:38,880
+music. I get all my music and sound
+
+220
+00:08:38,880 --> 00:08:41,280
+effects from Artlist, and if you want to
+
+221
+00:08:41,280 --> 00:08:43,640
+use the exact same that I did, then
+
+222
+00:08:43,640 --> 00:08:45,280
+there's a link in the description below,
+
+223
+00:08:45,280 --> 00:08:47,520
+and I think you can get 2 months free
+
+224
+00:08:47,520 --> 00:08:49,080
+through that link as well. For the
+
+225
+00:08:49,080 --> 00:08:51,120
+visual editing, it basically comes down
+
+226
+00:08:51,120 --> 00:08:53,640
+to three techniques that I've used. It's
+
+227
+00:08:53,640 --> 00:08:56,600
+retiming effects or speed ramps, some
+
+228
+00:08:56,600 --> 00:08:59,280
+simple zoom effects, and then some
+
+229
+00:08:59,280 --> 00:09:00,960
+transitions. We're going to use the
+
+230
+00:09:00,960 --> 00:09:03,120
+first clips of the commercial as an
+
+231
+00:09:03,120 --> 00:09:05,800
+example of how to use these effects and
+
+232
+00:09:05,800 --> 00:09:08,320
+really elevate your AI visuals. In the
+
+233
+00:09:08,320 --> 00:09:10,760
+very first clip of the commercial, as
+
+234
+00:09:10,760 --> 00:09:13,040
+the camera is moving towards the ball of
+
+235
+00:09:13,040 --> 00:09:14,760
+pizza dough at the end of the tunnel,
+
+236
+00:09:14,760 --> 00:09:16,920
+you can see that I have both added a
+
+237
+00:09:16,920 --> 00:09:19,760
+slight zoom in and adjusted the speed of
+
+238
+00:09:19,760 --> 00:09:22,000
+the clip according to the action when
+
+239
+00:09:22,000 --> 00:09:24,400
+the hand is entering the frame. Then,
+
+240
+00:09:24,400 --> 00:09:26,360
+when the hand is just about to grab the
+
+241
+00:09:26,360 --> 00:09:28,440
+ball of pizza dough, I have slowed it
+
+242
+00:09:28,440 --> 00:09:31,240
+down again and then sped it up with a
+
+243
+00:09:31,240 --> 00:09:33,880
+transition to the next shot. And I knew
+
+244
+00:09:33,880 --> 00:09:36,120
+I wanted to transition from this shot
+
+245
+00:09:36,120 --> 00:09:38,960
+upwards, so I intentionally chose a
+
+246
+00:09:38,960 --> 00:09:41,920
+transition that flows very good between
+
+247
+00:09:41,920 --> 00:09:44,680
+the shots that makes it feel natural and
+
+248
+00:09:44,680 --> 00:09:47,120
+guides the viewers' attention upwards.
+
+249
+00:09:47,120 --> 00:09:49,000
+And when we enter the next shot, I have
+
+250
+00:09:49,000 --> 00:09:51,200
+also sped up the beginning of that shot
+
+251
+00:09:51,200 --> 00:09:53,320
+to create a smooth as possible of a
+
+252
+00:09:53,320 --> 00:09:55,800
+transition in order for it to feel
+
+253
+00:09:55,800 --> 00:09:57,600
+seamless. And by using this method
+
+254
+00:09:57,600 --> 00:09:59,320
+throughout your videos, you can really
+
+255
+00:09:59,320 --> 00:10:01,680
+create some smooth motion from shot to
+
+256
+00:10:01,680 --> 00:10:04,840
+shot by having one shot ending in a
+
+257
+00:10:04,840 --> 00:10:07,560
+direction and another shot beginning in
+
+258
+00:10:07,560 --> 00:10:09,920
+the same direction. So, that way it
+
+259
+00:10:09,920 --> 00:10:12,400
+feels like the shots flow together in a
+
+260
+00:10:12,400 --> 00:10:15,000
+totally different way compared to just
+
+261
+00:10:15,000 --> 00:10:17,280
+having them after one another. And here
+
+262
+00:10:17,280 --> 00:10:19,320
+you can also get creative. For example,
+
+263
+00:10:19,320 --> 00:10:21,360
+this final shot of the pizza being
+
+264
+00:10:21,360 --> 00:10:24,480
+presented was actually reversed because
+
+265
+00:10:24,480 --> 00:10:26,640
+the generation that I created wasn't
+
+266
+00:10:26,640 --> 00:10:29,320
+quite good, but I saw that if I just
+
+267
+00:10:29,320 --> 00:10:31,760
+take the beginning of that shot and
+
+268
+00:10:31,760 --> 00:10:34,280
+reverse it, it will look quite okay with
+
+269
+00:10:34,280 --> 00:10:36,960
+the chef bringing it back as a showcase.
+
+270
+00:10:36,960 --> 00:10:39,000
+When I have done the visual edits to the
+
+271
+00:10:39,000 --> 00:10:41,120
+music, then I usually add sound effects
+
+272
+00:10:41,120 --> 00:10:43,560
+for transitions and impacts and
+
+273
+00:10:43,560 --> 00:10:45,720
+different elements of the commercial
+
+274
+00:10:45,720 --> 00:10:47,720
+that really brings it to life. And just
+
+275
+00:10:47,720 --> 00:10:49,320
+to show you the difference that sound
+
+276
+00:10:49,320 --> 00:10:51,360
+effects make, here is the commercial
+
+277
+00:10:51,360 --> 00:10:56,040
+without music and only sound effects.
+
+278
+00:11:13,839 --> 00:11:15,240
+Now, we have generated the whole
+
+279
+00:11:15,240 --> 00:11:18,280
+commercial only using AI tools, but was
+
+280
+00:11:18,280 --> 00:11:20,400
+it actually worth it compared to a
+
+281
+00:11:20,400 --> 00:11:22,120
+traditional product photography
+
+282
+00:11:22,120 --> 00:11:24,160
+workflow? If we look at the quality side
+
+283
+00:11:24,160 --> 00:11:27,720
+of things, the resolution is 1080p, so
+
+284
+00:11:27,720 --> 00:11:29,920
+they are of course lower quality than if
+
+285
+00:11:29,920 --> 00:11:31,680
+we we film them on a professional
+
+286
+00:11:31,680 --> 00:11:34,000
+camera. There can also be some wonkiness
+
+287
+00:11:34,000 --> 00:11:35,800
+sometimes in a clip. For example, in
+
+288
+00:11:35,800 --> 00:11:37,640
+this one where the pepperonis are
+
+289
+00:11:37,640 --> 00:11:39,800
+warping in a weird way. So, you have to
+
+290
+00:11:39,800 --> 00:11:41,880
+be really careful when generating if
+
+291
+00:11:41,880 --> 00:11:43,280
+you're going to do professional work
+
+292
+00:11:43,280 --> 00:11:45,440
+that there is no warping in your
+
+293
+00:11:45,440 --> 00:11:47,280
+footage. Then, looking at the workflow
+
+294
+00:11:47,280 --> 00:11:50,160
+itself, it's much more smooth using the
+
+295
+00:11:50,160 --> 00:11:52,680
+AI tools than actually doing the
+
+296
+00:11:52,680 --> 00:11:54,520
+production yourself. I would first of
+
+297
+00:11:54,520 --> 00:11:56,720
+all have had to schedule a day for the
+
+298
+00:11:56,720 --> 00:11:59,160
+photo shoot, book a talent for that
+
+299
+00:11:59,160 --> 00:12:02,280
+photo shoot, then either own or rent
+
+300
+00:12:02,280 --> 00:12:04,600
+expensive gear to make it happen. And
+
+301
+00:12:04,600 --> 00:12:06,560
+then in the editing, using traditional
+
+302
+00:12:06,560 --> 00:12:09,560
+methods, I can't retake a shot or
+
+303
+00:12:09,560 --> 00:12:12,000
+regenerate anything, but I'm stuck with
+
+304
+00:12:12,000 --> 00:12:14,120
+what I got on the day. If we would use a
+
+305
+00:12:14,120 --> 00:12:17,200
+combination of traditional and AI, then
+
+306
+00:12:17,200 --> 00:12:19,120
+we could have the best of both worlds.
+
+307
+00:12:19,120 --> 00:12:20,840
+But when we're comparing workflows like
+
+308
+00:12:20,840 --> 00:12:23,360
+this, the AI workflow definitely wins.
+
+309
+00:12:23,360 --> 00:12:25,840
+And then last but not least, the cost.
+
+310
+00:12:25,840 --> 00:12:27,760
+Of course, like I said, I would have had
+
+311
+00:12:27,760 --> 00:12:31,040
+to rent or own expensive gear worth
+
+312
+00:12:31,040 --> 00:12:33,440
+thousands and thousands of dollars, or
+
+313
+00:12:33,440 --> 00:12:35,200
+if you rent it, at least hundreds of
+
+314
+00:12:35,200 --> 00:12:37,560
+dollars per day. So, then if you compare
+
+315
+00:12:37,560 --> 00:12:40,000
+that to the AI credits I used for the
+
+316
+00:12:40,000 --> 00:12:42,160
+whole commercial, which was maybe in the
+
+317
+00:12:42,160 --> 00:12:45,120
+range of 50 to 100 dollars, it's a
+
+318
+00:12:45,120 --> 00:12:47,040
+no-brainer. And if you want access to
+
+319
+00:12:47,040 --> 00:12:49,480
+all the prompts I used in this video,
+
+320
+00:12:49,480 --> 00:12:51,280
+make sure to join my free school
+
+321
+00:12:51,280 --> 00:12:53,320
+community from the link below. And if
+
+322
+00:12:53,320 --> 00:12:54,880
+you enjoyed the video, make sure to
+
+323
+00:12:54,880 --> 00:12:56,880
+leave a like on it. But otherwise, I'll
+
+324
+00:12:56,880 --> 00:13:00,360
+see you in the next one.
