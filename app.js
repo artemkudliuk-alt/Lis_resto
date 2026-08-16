@@ -422,10 +422,10 @@
     modalCategoryBadge.innerText = cat ? cat.name : 'LIS';
 
     modalTags.innerHTML = `
-      ${dish.hasVideo ? '<span class="tag-badge hit">🎬 9:16 Відео</span>' : '<span class="tag-badge chef">📸 Фото-прев\'ю</span>'}
       ${dish.tags.includes('hit') ? '<span class="tag-badge hit">🔥 Хіт</span>' : ''}
       ${dish.tags.includes('chef') ? '<span class="tag-badge chef">👑 Chef\'s Choice</span>' : ''}
     `;
+
 
     modalDishTitle.innerText = dish.name;
     modalDishPrice.innerText = `${dish.price} ₴`;
