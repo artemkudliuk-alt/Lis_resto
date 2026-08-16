@@ -681,6 +681,25 @@ html, body {
   transform: scale(0.85);
 }
 
+/* Backdrop Dimmer when Ingredients Drawer is Open */
+.drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 25;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.drawer-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* Bottom Glassmorphism Overlay */
 .video-bottom-overlay {
   position: absolute;
@@ -691,6 +710,13 @@ html, body {
   background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 25%, rgba(18,15,23,0.92) 100%);
   z-index: 10;
   color: #FFFFFF;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-bottom-overlay.drawer-open {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
 }
 
 .overlay-main-info {
@@ -768,10 +794,16 @@ html, body {
   color: var(--color-accent);
   margin-top: 6px;
   letter-spacing: 0.3px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.expand-hint:hover {
+  text-decoration: underline;
 }
 
 /* ==========================================================================
-   COMPOSITION EXPANDABLE DRAWER
+   COMPOSITION EXPANDABLE DRAWER (SEMI-TRANSPARENT FROSTED GLASS)
    ========================================================================== */
 
 .composition-drawer {
@@ -779,22 +811,25 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
-  max-height: 75vh;
-  background: #1C1724;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  max-height: 82vh;
+  background: rgba(22, 17, 28, 0.84);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  box-shadow: var(--shadow-drawer);
+  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.7);
   z-index: 30;
   display: flex;
   flex-direction: column;
   transform: translateY(105%);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
   color: #FFFFFF;
 }
 
 .composition-drawer.open {
   transform: translateY(0);
 }
+
 
 .drawer-handle-bar {
   padding: 10px;

@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=2026">
+  <link rel="stylesheet" href="styles.css?v=3000">
 </head>
 <body>
   <!-- Main Mobile Container -->
@@ -162,7 +162,7 @@
           <span class="action-count" id="like-count">128</span>
         </button>
 
-        <button class="side-action-btn" id="info-drawer-btn" aria-label="Склад страви">
+        <button class="side-action-btn" id="info-drawer-btn" onclick="openDrawer()" aria-label="Склад страви">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="12" y1="16" x2="12" y2="12"></line>
@@ -172,9 +172,12 @@
         </button>
       </div>
 
+      <!-- Backdrop dimmer when ingredients drawer is open -->
+      <div class="drawer-backdrop" id="drawer-backdrop" onclick="closeDrawer()"></div>
+
       <!-- Bottom Glassmorphism Overlay (Reels / TikTok Style) -->
-      <div class="video-bottom-overlay">
-        <div class="overlay-main-info" id="overlay-tap-target">
+      <div class="video-bottom-overlay" id="video-bottom-overlay">
+        <div class="overlay-main-info" id="overlay-tap-target" onclick="openDrawer()">
           <div class="overlay-tags" id="modal-tags">
             <span class="tag-badge hit">🔥 Хіт ресторану</span>
             <span class="tag-badge chef">👑 Chef's Choice</span>
@@ -191,7 +194,7 @@
             Соковита яловича котлета на вугіллі хоспера, карамелізована цибуля, чеддер та фірмові діпи.
           </p>
 
-          <div class="expand-hint">
+          <div class="expand-hint" id="expand-hint-btn" onclick="openDrawer()">
             <span class="hint-text">Натисніть для перегляду повного складу</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="18 15 12 9 6 15"></polyline>
@@ -200,16 +203,18 @@
         </div>
       </div>
 
+
       <!-- Expandable Composition Bottom Sheet (Drawer) -->
       <div class="composition-drawer" id="composition-drawer">
-        <div class="drawer-handle-bar">
+        <div class="drawer-handle-bar" onclick="closeDrawer()">
           <div class="drawer-handle"></div>
         </div>
         
         <div class="drawer-header">
           <h3 class="drawer-title" id="drawer-dish-name">Склад та особливості страви</h3>
-          <button class="close-drawer-btn" id="close-drawer-btn">&times;</button>
+          <button class="close-drawer-btn" id="close-drawer-btn" onclick="closeDrawer()">&times;</button>
         </div>
+
 
         <div class="drawer-body">
           <div class="composition-section">
@@ -261,6 +266,6 @@
     <span class="toast-text" id="toast-text">Офіціанта викликано до столу #12!</span>
   </div>
 
-  <script src="app.js?v=2026"></script>
+  <script src="app.js?v=3003"></script>
 </body>
 </html>

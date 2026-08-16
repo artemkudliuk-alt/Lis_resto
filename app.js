@@ -235,12 +235,16 @@
 
   // Drawer Elements
   const compositionDrawer = document.getElementById('composition-drawer');
+  const drawerBackdrop = document.getElementById('drawer-backdrop');
+  const videoBottomOverlay = document.getElementById('video-bottom-overlay');
+  const expandHintBtn = document.getElementById('expand-hint-btn');
   const infoDrawerBtn = document.getElementById('info-drawer-btn');
   const closeDrawerBtn = document.getElementById('close-drawer-btn');
   const drawerDishName = document.getElementById('drawer-dish-name');
   const drawerComposition = document.getElementById('drawer-composition');
   const drawerAllergens = document.getElementById('drawer-allergens');
   const drawerNutrition = document.getElementById('drawer-nutrition');
+
 
   // Toast
   const toast = document.getElementById('toast');
@@ -481,16 +485,31 @@
   }
 
   // ==========================================================================
-  // COMPOSITION DRAWER
+  // COMPOSITION DRAWER (FROSTED GLASS OVERLAY)
   // ==========================================================================
 
   function openDrawer() {
-    compositionDrawer.classList.add('open');
+    const drawer = document.getElementById('composition-drawer');
+    const overlay = document.getElementById('video-bottom-overlay');
+    const backdrop = document.getElementById('drawer-backdrop');
+    if (drawer) drawer.classList.add('open');
+    if (overlay) overlay.classList.add('drawer-open');
+    if (backdrop) backdrop.classList.add('active');
   }
 
   function closeDrawer() {
-    compositionDrawer.classList.remove('open');
+    const drawer = document.getElementById('composition-drawer');
+    const overlay = document.getElementById('video-bottom-overlay');
+    const backdrop = document.getElementById('drawer-backdrop');
+    if (drawer) drawer.classList.remove('open');
+    if (overlay) overlay.classList.remove('drawer-open');
+    if (backdrop) backdrop.classList.remove('active');
   }
+
+  window.openDrawer = openDrawer;
+  window.closeDrawer = closeDrawer;
+
+
 
   // ==========================================================================
   // TOAST NOTIFICATIONS
@@ -579,10 +598,30 @@
       }
     });
 
-    // Drawer Controls
-    overlayTapTarget.addEventListener('click', openDrawer);
-    infoDrawerBtn.addEventListener('click', openDrawer);
-    closeDrawerBtn.addEventListener('click', closeDrawer);
+    // Drawer Triggers (Frosted Glass Ingredients Sheet)
+    document.addEventListener('click', e => {
+      if (!videoModal.classList.contains('active')) return;
+
+      // Close drawer triggers
+      if (e.target.closest('#close-drawer-btn') || e.target.closest('#drawer-backdrop')) {
+        closeDrawer();
+        return;
+      }
+
+      // Open drawer triggers
+      if (e.target.closest('#expand-hint-btn') || 
+          e.target.closest('#overlay-tap-target') || 
+          e.target.closest('.video-bottom-overlay') || 
+          e.target.closest('#info-drawer-btn')) {
+        if (!e.target.closest('.side-action-btn.like-btn') && 
+            !e.target.closest('#close-video-modal') && 
+            !e.target.closest('#toggle-sound-btn') &&
+            !compositionDrawer.classList.contains('open')) {
+          openDrawer();
+        }
+      }
+    });
+
 
     // Call Waiter Button
     callWaiterBtn.addEventListener('click', () => {
@@ -616,16 +655,21 @@
       const diffY = touchEndY - touchStartY;
       const diffX = touchEndX - touchStartX;
 
+      // Ignore micro-movements (pure taps) so click events fire cleanly
+      if (Math.abs(diffY) < 20 && Math.abs(diffX) < 20) {
+        return;
+      }
+
       // If composition drawer is open and user swipes down, close drawer
       if (compositionDrawer.classList.contains('open')) {
-        if (diffY > 60) {
+        if (diffY > 50) {
           closeDrawer();
         }
         return;
       }
 
       // Vertical Swipe (TikTok / Reels Style: Up = Next, Down = Prev)
-      if (Math.abs(diffY) > 50 && Math.abs(diffY) > Math.abs(diffX)) {
+      if (Math.abs(diffY) > 40 && Math.abs(diffY) > Math.abs(diffX)) {
         if (diffY < 0) {
           nextVideoDish(); // Swipe UP -> Next video
         } else {
@@ -633,6 +677,7 @@
         }
       }
     }
+
 
     // Mouse Wheel / Trackpad Scroll Support for Desktop (TikTok / Reels Web)
     let isWheelThrottled = false;
