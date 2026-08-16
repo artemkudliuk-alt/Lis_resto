@@ -21,9 +21,10 @@
   --badge-chef-bg: rgba(28, 50, 95, 0.1);
   --badge-chef-text: #1C325F;
 
-  /* Typography */
-  --font-brand: 'Outfit', sans-serif;
-  --font-body: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography: Montserrat (Headings / Brand) + Open Sans (Body & UI) */
+  --font-brand: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
 
   /* Elevation / Shadows */
   --shadow-sm: 0 2px 8px rgba(43, 36, 54, 0.06);

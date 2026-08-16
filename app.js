@@ -873,7 +873,8 @@
     }
   ];
 
-  let currentFontId = localStorage.getItem('lis_selected_font_pair') || 'outfit-manrope';
+  let currentFontId = localStorage.getItem('lis_selected_font_pair') || 'montserrat-opensans';
+
 
   function setupFontSwitcher() {
     const switcherToggle = document.getElementById('font-switcher-toggle');
