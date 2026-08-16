@@ -362,11 +362,14 @@
   }
 
   // ==========================================================================
-  // FULLSCREEN VIDEO MODAL CONTROLLER
+  // FULLSCREEN MEDIA MODAL CONTROLLER (FOR ALL DISHES: VIDEO & PHOTO PREVIEW)
   // ==========================================================================
 
+  const modalPhotoContainer = document.getElementById('modal-photo-container');
+  const modalPhotoImg = document.getElementById('modal-photo-img');
+
   function openVideoModal(dishId) {
-    const dishIndex = videoDishes.findIndex(d => d.id === dishId);
+    const dishIndex = MENU_ITEMS.findIndex(d => d.id === dishId);
     if (dishIndex !== -1) {
       activeDishIndex = dishIndex;
     } else {
@@ -378,31 +381,51 @@
   }
 
   function loadActiveVideoDish() {
-    const dish = videoDishes[activeDishIndex];
+    const dish = MENU_ITEMS[activeDishIndex];
     if (!dish) return;
 
-    videoLoader.classList.add('active');
+    // Reset UI states
+    closeDrawer();
+    likeDishBtn.classList.remove('liked');
 
-    // Update modal video source
-    modalVideo.src = dish.videoUrl;
-    modalVideo.poster = dish.posterUrl;
-    modalVideo.muted = isMuted;
+    if (dish.hasVideo) {
+      // VIDEO MODE
+      modalPhotoContainer.classList.add('hidden');
+      modalVideo.classList.remove('hidden');
+      toggleSoundBtn.style.display = 'flex';
+      videoLoader.classList.add('active');
 
-    modalVideo.play().then(() => {
+      modalVideo.src = dish.videoUrl;
+      modalVideo.poster = dish.posterUrl;
+      modalVideo.muted = isMuted;
+
+      modalVideo.play().then(() => {
+        videoLoader.classList.remove('active');
+      }).catch(err => {
+        console.log('Autoplay fallback:', err);
+        modalVideo.muted = true;
+        modalVideo.play();
+        videoLoader.classList.remove('active');
+      });
+    } else {
+      // PHOTO PREVIEW MODE (FOR ITEMS WITHOUT VIDEO YET)
+      modalVideo.pause();
+      modalVideo.classList.add('hidden');
+      modalPhotoContainer.classList.remove('hidden');
+      toggleSoundBtn.style.display = 'none';
       videoLoader.classList.remove('active');
-    }).catch(err => {
-      console.log('Autoplay muted fallback:', err);
-      modalVideo.muted = true;
-      modalVideo.play();
-      videoLoader.classList.remove('active');
-    });
+
+      modalPhotoImg.src = dish.posterUrl;
+      modalPhotoImg.alt = dish.name;
+    }
 
     // Update overlay content
     const cat = MENU_CATEGORIES.find(c => c.id === dish.categoryId);
     modalCategoryBadge.innerText = cat ? cat.name : 'LIS';
 
     modalTags.innerHTML = `
-      ${dish.tags.includes('hit') ? '<span class="tag-badge hit">🔥 Хіт ресторану</span>' : ''}
+      ${dish.hasVideo ? '<span class="tag-badge hit">🎬 9:16 Відео</span>' : '<span class="tag-badge chef">📸 Фото-прев\'ю</span>'}
+      ${dish.tags.includes('hit') ? '<span class="tag-badge hit">🔥 Хіт</span>' : ''}
       ${dish.tags.includes('chef') ? '<span class="tag-badge chef">👑 Chef\'s Choice</span>' : ''}
     `;
 
@@ -412,10 +435,7 @@
     modalDishShortDesc.innerText = dish.shortDesc;
     likeCount.innerText = dish.likes;
 
-    // Reset like button state
-    likeDishBtn.classList.remove('liked');
-
-    // Update drawer info
+    // Update drawer info (Ingredients, Allergens, Nutrition)
     drawerDishName.innerText = dish.name;
     drawerComposition.innerText = dish.composition;
     drawerAllergens.innerHTML = dish.allergens.map(a => `<span class="allergen-pill">${a}</span>`).join('');
@@ -428,9 +448,6 @@
         <div class="nutrition-item"><span class="val">${dish.nutrition.carbs}</span><span class="lbl">вуглеводи</span></div>
       `;
     }
-
-    // Close drawer if open
-    closeDrawer();
   }
 
   function closeVideoModal() {
@@ -441,14 +458,15 @@
   }
 
   function nextVideoDish() {
-    activeDishIndex = (activeDishIndex + 1) % videoDishes.length;
+    activeDishIndex = (activeDishIndex + 1) % MENU_ITEMS.length;
     loadActiveVideoDish();
   }
 
   function prevVideoDish() {
-    activeDishIndex = (activeDishIndex - 1 + videoDishes.length) % videoDishes.length;
+    activeDishIndex = (activeDishIndex - 1 + MENU_ITEMS.length) % MENU_ITEMS.length;
     loadActiveVideoDish();
   }
+
 
   function toggleSound() {
     isMuted = !isMuted;
@@ -533,22 +551,15 @@
       searchInput.focus();
     });
 
-    // Dish Card Clicks -> Open Fullscreen Video Modal
+    // Dish Card Clicks -> Open Fullscreen Media Modal for ALL dishes
     dishesContainer.addEventListener('click', e => {
       const card = e.target.closest('.dish-card');
       if (!card) return;
       const dishId = card.dataset.dishId;
-      const dish = MENU_ITEMS.find(d => d.id === dishId);
-      
-      if (dish && dish.hasVideo) {
-        openVideoModal(dishId);
-      } else if (dish) {
-        // Photo-only dish toast preview
-        showToast(`📋 ${dish.name}: ${dish.price} ₴`);
-      }
+      openVideoModal(dishId);
     });
 
-    // Modal Video Controls
+    // Modal Controls
     closeModalBtn.addEventListener('click', closeVideoModal);
     toggleSoundBtn.addEventListener('click', toggleSound);
     videoNextBtn.addEventListener('click', nextVideoDish);
@@ -556,7 +567,7 @@
 
     // Like Button
     likeDishBtn.addEventListener('click', () => {
-      const dish = videoDishes[activeDishIndex];
+      const dish = MENU_ITEMS[activeDishIndex];
       if (!dish) return;
       
       likeDishBtn.classList.toggle('liked');
@@ -565,7 +576,7 @@
         likeCount.innerText = dish.likes;
         showToast('❤️ Додано в улюблені страви!');
       } else {
-        dish.likes -= 1;
+        dish.likes = Math.max(0, dish.likes - 1);
         likeCount.innerText = dish.likes;
       }
     });
@@ -582,8 +593,9 @@
 
     // Stories Reel Button (Quick jump into video stream)
     openStoriesBtn.addEventListener('click', () => {
-      openVideoModal(videoDishes[0].id);
+      openVideoModal('burger-lis');
     });
+
 
     // Touch Swipe Gestures for Video Player
     let touchStartX = 0;
