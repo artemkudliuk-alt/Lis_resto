@@ -204,7 +204,7 @@
   let videoDishes = MENU_ITEMS.filter(item => item.hasVideo);
 
   // DOM Elements
-  const categoryTilesGrid = document.getElementById('category-tiles-grid');
+  const categoriesScrollTrack = document.getElementById('categories-scroll-track');
   const dishesContainer = document.getElementById('dishes-container');
   const categoryTitle = document.getElementById('category-title');
   const itemsCounter = document.getElementById('items-counter');
@@ -259,20 +259,20 @@
   }
 
   // ==========================================================================
-  // RENDER FUNCTIONS: 3-COLUMN CATEGORY TILES
+  // RENDER FUNCTIONS: SINGLE-ROW SCROLLABLE CATEGORIES
   // ==========================================================================
 
   function renderCategories() {
-    categoryTilesGrid.innerHTML = MENU_CATEGORIES.map(cat => {
+    categoriesScrollTrack.innerHTML = MENU_CATEGORIES.map(cat => {
       const count = cat.id === 'all' 
         ? MENU_ITEMS.length 
         : MENU_ITEMS.filter(d => d.categoryId === cat.id).length;
 
       return `
-        <button class="category-tile-card ${cat.id === currentCategory ? 'active' : ''}" data-category="${cat.id}">
-          <span class="tile-icon">${cat.icon}</span>
-          <span class="tile-title">${cat.name}</span>
-          <span class="tile-count">${count} поз.</span>
+        <button class="category-pill-btn ${cat.id === currentCategory ? 'active' : ''}" data-category="${cat.id}">
+          <span class="pill-icon">${cat.icon}</span>
+          <span class="pill-title">${cat.name}</span>
+          <span class="pill-badge">${count}</span>
         </button>
       `;
     }).join('');
@@ -495,14 +495,18 @@
   // ==========================================================================
 
   function setupEventListeners() {
-    // 3-Column Category Tiles
-    categoryTilesGrid.addEventListener('click', e => {
-      const tile = e.target.closest('.category-tile-card');
-      if (!tile) return;
-      currentCategory = tile.dataset.category;
+    // Single-Row Scrollable Categories
+    categoriesScrollTrack.addEventListener('click', e => {
+      const btn = e.target.closest('.category-pill-btn');
+      if (!btn) return;
+      currentCategory = btn.dataset.category;
       renderCategories();
       renderDishes();
+
+      // Smoothly center the active pill in the horizontal scroll view
+      btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     });
+
 
     // Search Toggle
     searchToggleBtn.addEventListener('click', () => {

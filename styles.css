@@ -74,7 +74,7 @@ html, body {
 }
 
 /* ==========================================================================
-   APP HEADER
+   APP HEADER & STICKY CONTAINER
    ========================================================================== */
 
 .app-header {
@@ -90,7 +90,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 16px 10px;
+  padding: 12px 16px 8px;
 }
 
 .brand-block {
@@ -101,7 +101,7 @@ html, body {
 
 .brand-logo {
   font-family: var(--font-brand);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 800;
   letter-spacing: 2px;
   color: #FFFFFF;
@@ -141,7 +141,7 @@ html, body {
 .table-tag {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 5px 10px;
+  padding: 4px 9px;
   border-radius: var(--radius-full);
   font-size: 11px;
   font-weight: 600;
@@ -152,8 +152,8 @@ html, body {
 .icon-btn {
   background: rgba(255, 255, 255, 0.1);
   border: none;
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: var(--radius-full);
   color: #FFFFFF;
   display: flex;
@@ -171,7 +171,7 @@ html, body {
 /* Search Bar */
 .search-bar-container {
   display: none;
-  padding: 0 16px 12px;
+  padding: 0 16px 10px;
 }
 
 .search-bar-container.active {
@@ -216,98 +216,92 @@ html, body {
 }
 
 /* ==========================================================================
-   3-COLUMN CATEGORY TILES (ПЛИТКИ ПО 3 В РЯД)
+   SINGLE-ROW HORIZONTAL SCROLLABLE CATEGORIES BAR
    ========================================================================== */
 
-.category-tiles-container {
-  padding: 12px 14px 14px;
+.categories-scroll-container {
+  padding: 4px 14px 10px;
   background-color: var(--color-primary-dark);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
-.category-tiles-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.categories-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.categories-scroll-track {
+  display: flex;
   gap: 8px;
+  width: max-content;
+  align-items: center;
 }
 
-.category-tile-card {
+.category-pill-btn {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-md);
-  padding: 10px 4px 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.category-tile-card:active {
-  transform: scale(0.95);
-}
-
-.category-tile-card.active {
-  background: linear-gradient(135deg, rgba(240, 96, 159, 0.3), rgba(240, 96, 159, 0.15));
-  border-color: var(--color-accent);
-  box-shadow: 0 4px 14px rgba(240, 96, 159, 0.35);
-}
-
-.category-tile-card.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 20%;
-  right: 20%;
-  height: 2.5px;
-  background: var(--color-accent);
   border-radius: var(--radius-full);
+  padding: 7px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  color: #DDD6E5;
 }
 
-.tile-icon {
-  font-size: 20px;
+.category-pill-btn:active {
+  transform: scale(0.94);
+}
+
+.category-pill-btn.active {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #FF80B5 100%);
+  border-color: var(--color-accent);
+  color: #FFFFFF;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(240, 96, 159, 0.45);
+  transform: translateY(-1px);
+}
+
+.pill-icon {
+  font-size: 15px;
   line-height: 1;
 }
 
-.tile-title {
+.pill-title {
   font-family: var(--font-brand);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
-  color: #E2DCE8;
-  letter-spacing: 0.3px;
-  line-height: 1.15;
+  letter-spacing: 0.4px;
 }
 
-.category-tile-card.active .tile-title {
+.pill-badge {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  font-size: 9.5px;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.category-pill-btn.active .pill-badge {
+  background: rgba(255, 255, 255, 0.28);
   color: #FFFFFF;
-  font-weight: 800;
-}
-
-.tile-count {
-  font-size: 9px;
-  font-weight: 600;
-  color: #8D98AE;
-}
-
-.category-tile-card.active .tile-count {
-  color: var(--color-accent);
 }
 
 /* ==========================================================================
-   MENU CONTENT & 2-COLUMN COMPACT DISH GRID
+   MENU CONTENT & COMPACT 2-COLUMN DISH GRID
    ========================================================================== */
 
 .menu-content {
-  padding: 14px 12px;
+  padding: 12px 12px;
   flex: 1;
 }
 
 .section-intro {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -334,7 +328,7 @@ html, body {
   gap: 10px;
 }
 
-/* Compact Dish Tile Card */
+/* Compact Dish Card */
 .dish-card {
   background: var(--color-card-bg);
   border-radius: var(--radius-md);
@@ -353,7 +347,7 @@ html, body {
   box-shadow: var(--shadow-md);
 }
 
-/* Dish Card Media Area (1:1 Square Ratio) */
+/* Media Area (1:1 Square) */
 .dish-media {
   position: relative;
   width: 100%;
