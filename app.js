@@ -594,22 +594,87 @@
     }, 2800);
   }
 
-  // ==========================================================================
-  // EVENT LISTENERS & TOUCH GESTURES
-  // ==========================================================================
+  // Single-Row Categories Drag-to-Scroll & Mouse Wheel Translation Engine
+  function setupCategoriesScrollEngine() {
+    const container = document.getElementById('categories-scroll-container');
+    if (!container) return;
 
-  function setupEventListeners() {
-    // Single-Row Scrollable Categories
-    categoriesScrollTrack.addEventListener('click', e => {
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+    let hasDragged = false;
+
+    // Mouse Drag support for desktop
+    container.addEventListener('mousedown', (e) => {
+      isDown = true;
+      hasDragged = false;
+      container.classList.add('is-dragging');
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (isDown) {
+        isDown = false;
+        container.classList.remove('is-dragging');
+      }
+    });
+
+    window.addEventListener('mouseleave', () => {
+      if (isDown) {
+        isDown = false;
+        container.classList.remove('is-dragging');
+      }
+    });
+
+    container.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX) * 1.5; // Scroll speed multiplier
+      if (Math.abs(walk) > 5) {
+        hasDragged = true;
+      }
+      container.scrollLeft = scrollLeft - walk;
+    });
+
+    // Horizontal Mouse Wheel Scroll translation
+    container.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) >= Math.abs(e.deltaX)) {
+        e.preventDefault();
+        container.scrollLeft += e.deltaY * 0.9;
+      }
+    }, { passive: false });
+
+    // Category click handler (distinguish drag from click)
+    categoriesScrollTrack.addEventListener('click', (e) => {
+      if (hasDragged) {
+        hasDragged = false;
+        return;
+      }
       const btn = e.target.closest('.category-pill-btn');
       if (!btn) return;
       currentCategory = btn.dataset.category;
       renderCategories();
       renderDishes();
 
-      // Smoothly center the active pill in the horizontal scroll view
-      btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      // Smoothly center the newly active pill in view
+      const activePill = categoriesScrollTrack.querySelector(`[data-category="${currentCategory}"]`);
+      if (activePill) {
+        activePill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
     });
+  }
+
+  // ==========================================================================
+  // EVENT LISTENERS & TOUCH GESTURES
+  // ==========================================================================
+
+
+  function setupEventListeners() {
+    // Single-Row Scrollable Categories: Drag-to-Scroll + Mouse Wheel + Click Centering
+    setupCategoriesScrollEngine();
+
 
 
     // Search Toggle

@@ -353,11 +353,23 @@ html, body {
    ========================================================================== */
 
 .categories-scroll-container {
-  padding: 4px 14px 10px;
+  padding: 6px 16px 12px;
   background-color: var(--color-primary-dark);
   overflow-x: auto;
+  overflow-y: hidden;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  overscroll-behavior-x: contain;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  scroll-behavior: smooth;
+}
+
+.categories-scroll-container.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
 }
 
 .categories-scroll-container::-webkit-scrollbar {
@@ -369,7 +381,9 @@ html, body {
   gap: 8px;
   width: max-content;
   align-items: center;
+  padding-right: 16px;
 }
+
 
 .category-pill-btn {
   background: rgba(255, 255, 255, 0.08);
