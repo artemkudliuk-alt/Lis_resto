@@ -319,9 +319,6 @@
       const chefBadge = dish.tags.includes('chef') ? `<span class="dish-tag chef">👑 ШЕФ</span>` : '';
       
       const mediaHtml = dish.hasVideo ? `
-        <div class="video-indicator">
-          <span class="dot"></span> 9:16 ВІДЕО
-        </div>
         <img src="${dish.posterUrl}" alt="${dish.name}" loading="lazy">
         <div class="card-play-overlay">
           <div class="play-circle">
@@ -335,6 +332,7 @@
         <img src="${dish.posterUrl}" alt="${dish.name}" loading="lazy">
         <div class="floating-price-tag">${dish.price} ₴</div>
       `;
+
 
       return `
         <article class="dish-card" data-dish-id="${dish.id}">

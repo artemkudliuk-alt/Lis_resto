@@ -363,40 +363,6 @@ html, body {
   display: block;
 }
 
-/* Video Badge */
-.video-indicator {
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  background: rgba(43, 36, 54, 0.85);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #FFFFFF;
-  padding: 3px 6px;
-  border-radius: var(--radius-full);
-  font-size: 8.5px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  letter-spacing: 0.3px;
-  z-index: 2;
-}
-
-.video-indicator .dot {
-  width: 5px;
-  height: 5px;
-  background: var(--color-accent);
-  border-radius: 50%;
-  animation: pulseDot 1.5s infinite;
-}
-
-@keyframes pulseDot {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.4); opacity: 0.5; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
 .card-play-overlay {
   position: absolute;
   inset: 0;
