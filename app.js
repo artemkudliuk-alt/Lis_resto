@@ -263,18 +263,19 @@
   function handleAppPreloader() {
     const preloader = document.getElementById('app-preloader');
     const progressBar = document.getElementById('preloader-progress-bar');
-    const statusText = document.getElementById('preloader-status');
+    const percentageText = document.getElementById('preloader-percentage');
     if (!preloader) return;
 
-    let progress = 15;
+    let progress = 18;
     const progressInterval = setInterval(() => {
-      progress += Math.floor(Math.random() * 25) + 15;
-      if (progress >= 90) {
-        progress = 90;
+      progress += Math.floor(Math.random() * 20) + 12;
+      if (progress >= 95) {
+        progress = 95;
         clearInterval(progressInterval);
       }
       if (progressBar) progressBar.style.width = `${progress}%`;
-    }, 120);
+      if (percentageText) percentageText.innerText = `${progress}%`;
+    }, 100);
 
     // Preload top key assets (burger video, negroni video, posters)
     const preloadItems = MENU_ITEMS.slice(0, 4);
@@ -285,16 +286,17 @@
       if (loadedCount >= preloadItems.length || progress >= 90) {
         clearInterval(progressInterval);
         if (progressBar) progressBar.style.width = '100%';
-        if (statusText) statusText.innerText = 'Меню готове!';
+        if (percentageText) percentageText.innerText = '100%';
         
         setTimeout(() => {
           preloader.classList.add('fade-out');
           setTimeout(() => {
             preloader.style.display = 'none';
-          }, 550);
-        }, 350);
+          }, 500);
+        }, 250);
       }
     };
+
 
     preloadItems.forEach(item => {
       const img = new Image();

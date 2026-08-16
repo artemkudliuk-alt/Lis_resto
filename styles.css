@@ -99,41 +99,26 @@ html, body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.preloader-logo-ring {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: rgba(240, 96, 159, 0.1);
-  border: 2px solid rgba(240, 96, 159, 0.35);
-  box-shadow: 0 0 25px rgba(240, 96, 159, 0.3);
+.preloader-logo-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  animation: pulseGlow 2s infinite ease-in-out;
-}
-
-.preloader-logo-ring::after {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 1.5px dashed rgba(240, 96, 159, 0.6);
-  animation: spin 10s linear infinite;
-}
-
-@keyframes pulseGlow {
-  0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(240, 96, 159, 0.25); }
-  50% { transform: scale(1.04); box-shadow: 0 0 35px rgba(240, 96, 159, 0.5); }
+  margin-bottom: 6px;
 }
 
 .preloader-ribas-logo {
-  width: 52px;
+  width: 120px;
+  max-width: 150px;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.7));
+  animation: logoSoftFloat 3s infinite ease-in-out;
 }
 
+@keyframes logoSoftFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
 
 .preloader-brand {
   display: flex;
@@ -158,13 +143,20 @@ html, body {
   color: #B3A8BC;
 }
 
+.preloader-progress-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
 .preloader-progress-track {
   width: 180px;
   height: 4px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-full);
   overflow: hidden;
-  margin-top: 8px;
 }
 
 .preloader-progress-bar {
@@ -176,12 +168,14 @@ html, body {
   transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.preloader-status {
-  font-size: 11px;
-  color: #8E8498;
-  font-weight: 600;
-  letter-spacing: 0.3px;
+.preloader-percentage {
+  font-size: 12px;
+  color: #E2DBEA;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-variant-numeric: tabular-nums;
 }
+
 
 /* ==========================================================================
    MOBILE CONTAINER & DESKTOP WRAPPER
