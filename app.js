@@ -36,8 +36,9 @@
       categoryId: 'cocktails',
       name: 'Коктейль Negroni',
       price: 350,
-      weight: '1 порц.',
+      weight: '150 мл',
       hasVideo: true,
+
       videoUrl: 'assets/videos/Negroni.mp4',
       posterUrl: 'assets/images/negroni_poster.jpg?v=5',
       shortDesc: 'Преміальний джин Gordon\'s London Dry, вермут Cinzano Rosso, біттер Campari, монолітний куб льоду та цедра апельсина.',
