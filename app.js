@@ -218,9 +218,6 @@
   const modalVideo = document.getElementById('modal-video');
   const videoLoader = document.getElementById('video-loader');
   const closeModalBtn = document.getElementById('close-video-modal');
-  const toggleSoundBtn = document.getElementById('toggle-sound-btn');
-  const soundIconMuted = document.getElementById('sound-icon-muted');
-  const soundIconUnmuted = document.getElementById('sound-icon-unmuted');
   const modalCategoryBadge = document.getElementById('modal-category-badge');
   const modalTags = document.getElementById('modal-tags');
   const modalDishTitle = document.getElementById('modal-dish-title');
@@ -229,9 +226,8 @@
   const modalDishShortDesc = document.getElementById('modal-dish-short-desc');
   const likeDishBtn = document.getElementById('like-dish-btn');
   const likeCount = document.getElementById('like-count');
-  const videoPrevBtn = document.getElementById('video-prev-btn');
-  const videoNextBtn = document.getElementById('video-next-btn');
   const overlayTapTarget = document.getElementById('overlay-tap-target');
+
 
   // Drawer Elements
   const compositionDrawer = document.getElementById('composition-drawer');
@@ -394,12 +390,11 @@
       // VIDEO MODE
       modalPhotoContainer.classList.add('hidden');
       modalVideo.classList.remove('hidden');
-      toggleSoundBtn.style.display = 'flex';
       videoLoader.classList.add('active');
 
       modalVideo.src = dish.videoUrl;
       modalVideo.poster = dish.posterUrl;
-      modalVideo.muted = isMuted;
+      modalVideo.muted = true;
 
       modalVideo.play().then(() => {
         videoLoader.classList.remove('active');
@@ -414,12 +409,12 @@
       modalVideo.pause();
       modalVideo.classList.add('hidden');
       modalPhotoContainer.classList.remove('hidden');
-      toggleSoundBtn.style.display = 'none';
       videoLoader.classList.remove('active');
 
       modalPhotoImg.src = dish.posterUrl;
       modalPhotoImg.alt = dish.name;
     }
+
 
     // Update overlay content
     const cat = MENU_CATEGORIES.find(c => c.id === dish.categoryId);
@@ -469,20 +464,6 @@
     loadActiveVideoDish();
   }
 
-
-  function toggleSound() {
-    isMuted = !isMuted;
-    modalVideo.muted = isMuted;
-    if (isMuted) {
-      soundIconMuted.classList.remove('hidden');
-      soundIconUnmuted.classList.add('hidden');
-      showToast('🔇 Звук вимкнено');
-    } else {
-      soundIconMuted.classList.add('hidden');
-      soundIconUnmuted.classList.remove('hidden');
-      showToast('🔊 Звук увімкнено');
-    }
-  }
 
   // ==========================================================================
   // COMPOSITION DRAWER (FROSTED GLASS OVERLAY)
@@ -577,10 +558,8 @@
     });
 
     // Modal Controls
-    closeModalBtn.addEventListener('click', closeVideoModal);
-    toggleSoundBtn.addEventListener('click', toggleSound);
-    videoNextBtn.addEventListener('click', nextVideoDish);
-    videoPrevBtn.addEventListener('click', prevVideoDish);
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeVideoModal);
+
 
     // Like Button
     likeDishBtn.addEventListener('click', () => {
