@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&family=Comfortaa:wght@500;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Exo+2:wght@600;800&family=Fira+Sans:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&family=Mulish:wght@400;600;700&family=Nunito:wght@400;600;700&family=Onest:wght@400;500;700&family=Open+Sans:wght@400;600&family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@500;700;800&family=Rubik:wght@400;500;700&family=Spectral:ital,wght@0,500;0,700;1,600&family=Tenor+Sans&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6000">
+  <link rel="stylesheet" href="styles.css?v=7000">
 </head>
 <body>
   <!-- App Initial Luxury Preloader Splash with Ribas Logo -->
@@ -39,33 +39,31 @@
   <!-- Main Mobile Container -->
   <div class="mobile-wrapper" id="app">
 
-    <!-- Top Header (Ribas Karpaty / LIS Style) -->
+    <!-- Top Header (LIS on Left, Ribas Logo in Center, Search + Table on Right) -->
     <header class="app-header">
       <div class="header-top">
-        <div class="header-side-action left">
+        <!-- Left: LIS Brand -->
+        <div class="header-left">
+          <span class="brand-logo">LIS</span>
+        </div>
+
+        <!-- Center: Ribas Logo Only -->
+        <div class="header-center">
+          <img src="Ribas_logo_white.png" alt="Ribas Hotel Karpaty" class="header-ribas-logo">
+        </div>
+
+        <!-- Right: Search Icon + Table Number -->
+        <div class="header-right">
           <button class="icon-btn" id="search-toggle-btn" aria-label="Пошук страви" title="Пошук">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
           </button>
-        </div>
-
-        <div class="brand-block">
-          <img src="Ribas_logo_white.png" alt="Ribas Hotel Karpaty" class="header-ribas-logo">
-          <div class="brand-divider"></div>
-          <div class="brand-text-wrap">
-            <div class="brand-logo">LIS</div>
-            <div class="brand-sub">
-              <span class="location-badge">📍 БУКОВЕЛЬ</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="header-side-action right">
           <div class="table-tag">Стіл #12</div>
         </div>
       </div>
+
 
 
 
@@ -306,7 +304,7 @@
     </div>
   </div>
 
-  <script src="app.js?v=6000"></script>
+  <script src="app.js?v=7000"></script>
 </body>
 </html>
 
