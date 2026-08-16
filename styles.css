@@ -58,8 +58,131 @@ html, body {
 }
 
 /* ==========================================================================
+   LUXURY APP PRELOADER (SPLASH SCREEN)
+   ========================================================================== */
+
+.app-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: radial-gradient(circle at center, #241A33 0%, #0D0914 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              visibility 0.5s;
+}
+
+.app-preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.05);
+}
+
+.preloader-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 280px;
+  animation: preloaderCardFadeIn 0.6s ease-out forwards;
+}
+
+@keyframes preloaderCardFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.preloader-logo-ring {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(240, 96, 159, 0.1);
+  border: 2px solid rgba(240, 96, 159, 0.35);
+  box-shadow: 0 0 25px rgba(240, 96, 159, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.preloader-logo-ring::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(240, 96, 159, 0.6);
+  animation: spin 10s linear infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(240, 96, 159, 0.25); }
+  50% { transform: scale(1.04); box-shadow: 0 0 35px rgba(240, 96, 159, 0.5); }
+}
+
+.preloader-emblem {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.preloader-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.preloader-title {
+  font-family: var(--font-brand);
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #FFFFFF;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.preloader-subtitle {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #B3A8BC;
+}
+
+.preloader-progress-track {
+  width: 180px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.preloader-progress-bar {
+  height: 100%;
+  width: 15%;
+  background: linear-gradient(90deg, var(--color-accent), #FFB3D4);
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 10px rgba(240, 96, 159, 0.8);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.preloader-status {
+  font-size: 11px;
+  color: #8E8498;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* ==========================================================================
    MOBILE CONTAINER & DESKTOP WRAPPER
    ========================================================================== */
+
 
 .mobile-wrapper {
   max-width: 480px;

@@ -249,14 +249,95 @@
   const openStoriesBtn = document.getElementById('open-video-stories-btn');
 
   // ==========================================================================
-  // INITIALIZATION
+  // INITIALIZATION & PRELOADER
   // ==========================================================================
 
   function init() {
     renderCategories();
     renderDishes();
     setupEventListeners();
+    handleAppPreloader();
   }
+
+  function handleAppPreloader() {
+    const preloader = document.getElementById('app-preloader');
+    const progressBar = document.getElementById('preloader-progress-bar');
+    const statusText = document.getElementById('preloader-status');
+    if (!preloader) return;
+
+    let progress = 15;
+    const progressInterval = setInterval(() => {
+      progress += Math.floor(Math.random() * 25) + 15;
+      if (progress >= 90) {
+        progress = 90;
+        clearInterval(progressInterval);
+      }
+      if (progressBar) progressBar.style.width = `${progress}%`;
+    }, 120);
+
+    // Preload top key assets (burger video, negroni video, posters)
+    const preloadItems = MENU_ITEMS.slice(0, 4);
+    let loadedCount = 0;
+
+    const checkAllLoaded = () => {
+      loadedCount++;
+      if (loadedCount >= preloadItems.length || progress >= 90) {
+        clearInterval(progressInterval);
+        if (progressBar) progressBar.style.width = '100%';
+        if (statusText) statusText.innerText = 'Меню готове!';
+        
+        setTimeout(() => {
+          preloader.classList.add('fade-out');
+          setTimeout(() => {
+            preloader.style.display = 'none';
+          }, 550);
+        }, 350);
+      }
+    };
+
+    preloadItems.forEach(item => {
+      const img = new Image();
+      img.src = item.posterUrl;
+      img.onload = checkAllLoaded;
+      img.onerror = checkAllLoaded;
+
+      if (item.hasVideo && item.videoUrl) {
+        const vid = document.createElement('video');
+        vid.preload = 'auto';
+        vid.src = item.videoUrl;
+      }
+    });
+
+    // Fallback safety timeout (maximum 1.2s splash)
+    setTimeout(() => {
+      if (preloader && !preloader.classList.contains('fade-out')) {
+        clearInterval(progressInterval);
+        if (progressBar) progressBar.style.width = '100%';
+        preloader.classList.add('fade-out');
+        setTimeout(() => { preloader.style.display = 'none'; }, 550);
+      }
+    }, 1200);
+  }
+
+  // Preload adjacent video assets for seamless vertical TikTok/Reels feed scrolling
+  function preloadAdjacentVideos(currentIndex) {
+    const nextIdx = (currentIndex + 1) % MENU_ITEMS.length;
+    const prevIdx = (currentIndex - 1 + MENU_ITEMS.length) % MENU_ITEMS.length;
+
+    [MENU_ITEMS[nextIdx], MENU_ITEMS[prevIdx]].forEach(item => {
+      if (!item) return;
+      if (item.hasVideo && item.videoUrl) {
+        const preloaderVid = document.createElement('video');
+        preloaderVid.preload = 'auto';
+        preloaderVid.src = item.videoUrl;
+      }
+      if (item.posterUrl) {
+        const preloaderImg = new Image();
+        preloaderImg.src = item.posterUrl;
+      }
+    });
+  }
+
 
   // ==========================================================================
   // RENDER FUNCTIONS: SINGLE-ROW SCROLLABLE CATEGORIES
@@ -445,7 +526,11 @@
         <div class="nutrition-item"><span class="val">${dish.nutrition.carbs}</span><span class="lbl">вуглеводи</span></div>
       `;
     }
+
+    // Preload next and prev video streams for instant vertical swipe
+    preloadAdjacentVideos(activeDishIndex);
   }
+
 
   function closeVideoModal() {
     videoModal.classList.remove('active');

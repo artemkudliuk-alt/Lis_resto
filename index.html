@@ -14,14 +14,30 @@
 
   <!-- Google Fonts: Outfit (Headings & Brand) + Manrope & Inter (UI Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css?v=3000">
+  <link rel="stylesheet" href="styles.css?v=4000">
 </head>
 <body>
+  <!-- App Initial Luxury Preloader Splash -->
+  <div id="app-preloader" class="app-preloader">
+    <div class="preloader-card">
+      <div class="preloader-logo-ring">
+        <span class="preloader-emblem">🌲</span>
+      </div>
+      <div class="preloader-brand">
+        <h1 class="preloader-title">LIS</h1>
+        <p class="preloader-subtitle">RIBAS KARPATY • BUKOVEL</p>
+      </div>
+      <div class="preloader-progress-track">
+        <div class="preloader-progress-bar" id="preloader-progress-bar"></div>
+      </div>
+      <div class="preloader-status" id="preloader-status">Завантаження меню...</div>
+    </div>
+  </div>
+
   <!-- Main Mobile Container -->
   <div class="mobile-wrapper" id="app">
+
     
     <!-- Top Header (Ribas Karpaty / LIS Style) -->
     <header class="app-header">
@@ -257,6 +273,6 @@
     <span class="toast-text" id="toast-text">Офіціанта викликано до столу #12!</span>
   </div>
 
-  <script src="app.js?v=3005"></script>
+  <script src="app.js?v=4000"></script>
 </body>
 </html>
