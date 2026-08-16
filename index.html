@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&family=Comfortaa:wght@500;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Exo+2:wght@600;800&family=Fira+Sans:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&family=Mulish:wght@400;600;700&family=Nunito:wght@400;600;700&family=Onest:wght@400;500;700&family=Open+Sans:wght@400;600&family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@500;700;800&family=Rubik:wght@400;500;700&family=Spectral:ital,wght@0,500;0,700;1,600&family=Tenor+Sans&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=8000">
+  <link rel="stylesheet" href="styles.css?v=9000">
 </head>
 <body>
   <!-- App Initial Luxury Preloader Splash with Ribas Logo -->
@@ -277,11 +277,61 @@
     </div>
   </div>
 
+  <!-- Waiter & Concierge Service Liquid Glass HUD Modal -->
+  <div class="concierge-backdrop" id="concierge-backdrop"></div>
+  <div class="concierge-modal" id="concierge-modal">
+    <div class="concierge-card">
+      <div class="concierge-handle"></div>
+      <div class="concierge-header">
+        <div class="concierge-icon-badge">🛎️</div>
+        <div class="concierge-title-wrap">
+          <h3 class="concierge-title">Сервіс Столу #12</h3>
+          <p class="concierge-subtitle">Оберіть послугу, і персонал LIS миттєво підійде</p>
+        </div>
+        <button class="concierge-close" id="concierge-close-btn">&times;</button>
+      </div>
+
+      <div class="concierge-actions-grid">
+        <button class="concierge-action-btn" data-action="Покликати офіціанта">
+          <span class="action-emoji">🙋‍♂️</span>
+          <span class="action-name">Покликати офіціанта</span>
+          <span class="action-desc">Допомога з вибором чи замовлення</span>
+        </button>
+        <button class="concierge-action-btn" data-action="Рахунок (Картка)">
+          <span class="action-emoji">💳</span>
+          <span class="action-name">Рахунок карткою</span>
+          <span class="action-desc">Термінал для безконтактної оплати</span>
+        </button>
+        <button class="concierge-action-btn" data-action="Рахунок (Готівка)">
+          <span class="action-emoji">💵</span>
+          <span class="action-name">Рахунок готівкою</span>
+          <span class="action-desc">Розрахунок за столом</span>
+        </button>
+        <button class="concierge-action-btn" data-action="Консультація сомельє">
+          <span class="action-emoji">🍷</span>
+          <span class="action-name">Викликати сомельє</span>
+          <span class="action-desc">Підбір вина та настоянок</span>
+        </button>
+        <button class="concierge-action-btn" data-action="Оновити прибори та келихи">
+          <span class="action-emoji">🍴</span>
+          <span class="action-name">Оновити прибори</span>
+          <span class="action-desc">Нові келихи, прибори, серветки</span>
+        </button>
+        <button class="concierge-action-btn" data-action="Теплий плед на терасу">
+          <span class="action-emoji">🏔️</span>
+          <span class="action-name">Плед на терасу</span>
+          <span class="action-desc">Теплий карпатський плед</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification Modal for Waiter Call -->
   <div class="toast-notification" id="toast">
     <span class="toast-icon">🛎️</span>
     <span class="toast-text" id="toast-text">Офіціанта викликано до столу #12!</span>
   </div>
+
 
   <!-- Floating Font Switcher Widget (Docked in Bottom-Right Corner of Screen) -->
   <div class="font-switcher-widget" id="font-switcher-widget">
@@ -307,7 +357,7 @@
     </div>
   </div>
 
-  <script src="app.js?v=7000"></script>
+  <script src="app.js?v=9000"></script>
 </body>
 </html>
 

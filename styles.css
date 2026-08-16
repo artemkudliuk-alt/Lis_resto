@@ -25,12 +25,20 @@
   --font-brand: 'Montserrat', sans-serif;
   --font-body: 'Open Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
+  /* iOS 26 Liquid Glass System Tokens */
+  --liquid-glass-bg: rgba(34, 26, 46, 0.82);
+  --liquid-glass-bg-subtle: rgba(255, 255, 255, 0.07);
+  --liquid-glass-border: rgba(255, 255, 255, 0.16);
+  --liquid-glass-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
+  --liquid-glass-blur: blur(24px) saturate(190%);
+  --liquid-glow-accent: 0 0 25px rgba(240, 96, 159, 0.4);
 
   /* Elevation / Shadows */
   --shadow-sm: 0 2px 8px rgba(43, 36, 54, 0.06);
-  --shadow-md: 0 6px 20px rgba(43, 36, 54, 0.1);
-  --shadow-lg: 0 12px 36px rgba(43, 36, 54, 0.18);
-  --shadow-drawer: 0 -10px 40px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.22);
+  --shadow-drawer: 0 -15px 50px rgba(0, 0, 0, 0.6);
+
 
   /* Dimensions */
   --bottom-nav-height: 64px;
@@ -1090,43 +1098,51 @@ html, body {
 }
 
 /* ==========================================================================
-   BOTTOM APP NAVIGATION
+   BOTTOM APP NAVIGATION — FLOATING LIQUID GLASS CAPSULE (iOS 26)
    ========================================================================== */
 
 .bottom-nav {
   position: fixed;
-  bottom: 0;
+  bottom: 14px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
-  max-width: 480px;
-  height: var(--bottom-nav-height);
-  background: rgba(43, 36, 54, 0.95);
-  backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: calc(100% - 24px);
+  max-width: 440px;
+  height: 60px;
+  background: rgba(30, 24, 40, 0.88);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 0 10px;
+  padding: 0 12px;
   z-index: 40;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-item {
   background: transparent;
   border: none;
-  color: #9E95A8;
+  color: #A9A0B4;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: color 0.2s ease, transform 0.1s ease;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-item.active {
-  color: var(--color-accent);
+  color: #FFFFFF;
+  background: rgba(240, 96, 159, 0.22);
+  box-shadow: 0 0 15px rgba(240, 96, 159, 0.3);
 }
 
 .nav-item:active {
@@ -1134,15 +1150,221 @@ html, body {
 }
 
 .stories-icon-wrapper {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   background: linear-gradient(135deg, var(--color-accent), #FF85B2);
   color: #FFFFFF;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 10px rgba(240, 96, 159, 0.5);
+  box-shadow: 0 2px 10px rgba(240, 96, 159, 0.6);
+  animation: storiesPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes storiesPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 2px 10px rgba(240, 96, 159, 0.5); }
+  50% { transform: scale(1.08); box-shadow: 0 4px 18px rgba(240, 96, 159, 0.8); }
+}
+
+/* ==========================================================================
+   CONCIERGE & WAITER CALL HUD MODAL (LIQUID GLASS)
+   ========================================================================== */
+
+.concierge-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 9, 18, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.concierge-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.concierge-modal {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(105%);
+  width: 100%;
+  max-width: 480px;
+  z-index: 1001;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0 12px 16px;
+}
+
+.concierge-modal.active {
+  transform: translateX(-50%) translateY(0);
+}
+
+.concierge-card {
+  background: rgba(26, 20, 36, 0.94);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 26px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+  padding: 16px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.concierge-handle {
+  width: 36px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-full);
+  align-self: center;
+}
+
+.concierge-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.concierge-icon-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(240, 96, 159, 0.2);
+  border: 1px solid rgba(240, 96, 159, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 0 15px rgba(240, 96, 159, 0.3);
+}
+
+.concierge-title-wrap {
+  flex: 1;
+}
+
+.concierge-title {
+  font-family: var(--font-brand);
+  font-size: 16px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.concierge-subtitle {
+  font-size: 11px;
+  color: #B5AAC0;
+  margin-top: 2px;
+}
+
+.concierge-close {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #FFFFFF;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.concierge-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.concierge-action-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.concierge-action-btn:hover {
+  background: rgba(240, 96, 159, 0.15);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(240, 96, 159, 0.25);
+}
+
+.concierge-action-btn:active {
+  transform: scale(0.96);
+}
+
+.action-emoji {
+  font-size: 20px;
+}
+
+.action-name {
+  font-family: var(--font-brand);
+  font-size: 12px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.action-desc {
+  font-size: 9.5px;
+  color: #A69BB2;
+  line-height: 1.25;
+}
+
+/* ==========================================================================
+   DELIGHT: HEART BURST PARTICLES & NUMBER POPS
+   ========================================================================== */
+
+.heart-burst-particle {
+  position: absolute;
+  pointer-events: none;
+  font-size: 24px;
+  z-index: 9999;
+  user-select: none;
+  animation: heartBurstFloat 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heartBurstFloat {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.5) rotate(0deg);
+  }
+  40% {
+    opacity: 1;
+    transform: translate(calc(-50% + var(--rand-x, 0px)), calc(-50% - 60px)) scale(1.4) rotate(var(--rand-rot, 0deg));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--rand-x, 0px)), calc(-50% - 110px)) scale(1) rotate(var(--rand-rot, 0deg));
+  }
+}
+
+/* Stagger Animation for Dish Grid */
+@keyframes cardStaggerPop {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.dish-card {
+  animation: cardStaggerPop 0.35s cubic-bezier(0.16, 1, 0.3, 1) backwards;
 }
 
 /* ==========================================================================
@@ -1155,16 +1377,17 @@ html, body {
   left: 50%;
   transform: translateX(-50%) translateY(-100px);
   background: rgba(28, 50, 95, 0.95);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.3);
   color: #FFFFFF;
-  padding: 10px 18px;
+  padding: 11px 20px;
   border-radius: var(--radius-full);
-  box-shadow: var(--shadow-lg);
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 700;
   z-index: 2000;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1179,6 +1402,7 @@ html, body {
 .hidden {
   display: none !important;
 }
+
 
 /* ==========================================================================
    FLOATING FONT SWITCHER WIDGET (OUTSIDE APP CONTAINER)

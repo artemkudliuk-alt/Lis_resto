@@ -398,7 +398,7 @@
       return;
     }
 
-    dishesContainer.innerHTML = filtered.map(dish => {
+    dishesContainer.innerHTML = filtered.map((dish, index) => {
       const hitBadge = dish.tags.includes('hit') ? `<span class="dish-tag hit">🔥 ХІТ</span>` : '';
       const chefBadge = dish.tags.includes('chef') ? `<span class="dish-tag chef">👑 ШЕФ</span>` : '';
       
@@ -417,9 +417,8 @@
         <div class="floating-price-tag">${dish.price} ₴</div>
       `;
 
-
       return `
-        <article class="dish-card" data-dish-id="${dish.id}">
+        <article class="dish-card" data-dish-id="${dish.id}" style="animation-delay: ${index * 45}ms;">
           <div class="dish-media">
             ${mediaHtml}
           </div>
@@ -436,6 +435,7 @@
       `;
     }).join('');
   }
+
 
   function getWordEnding(num) {
     if (num === 1) return 'страва';
@@ -592,6 +592,34 @@
     toastTimer = setTimeout(() => {
       toast.classList.remove('active');
     }, 2800);
+  }
+
+  // Delight: Floating Heart Burst Particle Explosion
+  function triggerHeartBurst(clientX, clientY) {
+    const hearts = ['❤️', '💖', '✨', '🔥', '🌸'];
+    const count = 7;
+    const posX = clientX || window.innerWidth / 2;
+    const posY = clientY || window.innerHeight / 2;
+
+    for (let i = 0; i < count; i++) {
+      const el = document.createElement('div');
+      el.className = 'heart-burst-particle';
+      el.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+      el.style.left = `${posX}px`;
+      el.style.top = `${posY}px`;
+      
+      const randX = (Math.random() - 0.5) * 120;
+      const randRot = (Math.random() - 0.5) * 60;
+      el.style.setProperty('--rand-x', `${randX}px`);
+      el.style.setProperty('--rand-rot', `${randRot}deg`);
+      el.style.fontSize = `${Math.floor(Math.random() * 16) + 24}px`;
+      el.style.animationDelay = `${i * 35}ms`;
+
+      document.body.appendChild(el);
+      setTimeout(() => {
+        el.remove();
+      }, 1000);
+    }
   }
 
   // Single-Row Categories Drag-to-Scroll & Mouse Wheel Translation Engine
@@ -755,15 +783,67 @@
     });
 
 
-    // Call Waiter Button
-    callWaiterBtn.addEventListener('click', () => {
-      showToast('🛎️ Офіціанта викликано до столу #12!');
+    // Concierge & Waiter Service Liquid Glass HUD Modal
+    const conciergeModal = document.getElementById('concierge-modal');
+    const conciergeBackdrop = document.getElementById('concierge-backdrop');
+    const conciergeCloseBtn = document.getElementById('concierge-close-btn');
+
+    function openConciergeModal() {
+      if (conciergeModal && conciergeBackdrop) {
+        conciergeBackdrop.classList.add('active');
+        conciergeModal.classList.add('active');
+        navigator.vibrate?.(30);
+      }
+    }
+
+    function closeConciergeModal() {
+      if (conciergeModal && conciergeBackdrop) {
+        conciergeBackdrop.classList.remove('active');
+        conciergeModal.classList.remove('active');
+      }
+    }
+
+    if (callWaiterBtn) callWaiterBtn.addEventListener('click', openConciergeModal);
+    if (conciergeCloseBtn) conciergeCloseBtn.addEventListener('click', closeConciergeModal);
+    if (conciergeBackdrop) conciergeBackdrop.addEventListener('click', closeConciergeModal);
+
+    // Concierge quick action click
+    if (conciergeModal) {
+      conciergeModal.addEventListener('click', e => {
+        const btn = e.target.closest('.concierge-action-btn');
+        if (!btn) return;
+        const action = btn.dataset.action || 'Виклик офіціанта';
+        navigator.vibrate?.([30, 40, 30]);
+        showToast(`🛎️ Запит: «${action}» надіслано персоналу (Стіл #12)`);
+        closeConciergeModal();
+      });
+    }
+
+    // Double-Tap & Double-Click to Like with Heart Burst Delight
+    let lastTapTime = 0;
+    videoModal.addEventListener('click', e => {
+      if (e.target.closest('#close-video-modal') || e.target.closest('#composition-drawer')) return;
+      const currentTime = new Date().getTime();
+      const tapLength = currentTime - lastTapTime;
+      if (tapLength < 350 && tapLength > 0) {
+        // Double Tap Detected!
+        triggerHeartBurst(e.clientX, e.clientY);
+        const dish = MENU_ITEMS[activeDishIndex];
+        if (dish && likeDishBtn) {
+          likeDishBtn.classList.add('liked');
+          dish.likes += 1;
+          likeCount.innerText = dish.likes;
+          showToast('❤️ Додано в улюблені страви!');
+        }
+      }
+      lastTapTime = currentTime;
     });
 
     // Stories Reel Button (Quick jump into video stream)
     openStoriesBtn.addEventListener('click', () => {
       openVideoModal('burger-lis');
     });
+
 
 
     // Vertical Swipe Gestures for Video Player (TikTok / Instagram Reels Style)
