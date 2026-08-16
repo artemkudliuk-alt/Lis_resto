@@ -595,54 +595,76 @@
     });
 
 
-    // Touch Swipe Gestures for Video Player
+    // Vertical Swipe Gestures for Video Player (TikTok / Instagram Reels Style)
     let touchStartX = 0;
     let touchStartY = 0;
     let touchEndX = 0;
     let touchEndY = 0;
 
     videoModal.addEventListener('touchstart', e => {
-      touchStartX = e.changedTouches[0].screenX;
-      touchStartY = e.changedTouches[0].screenY;
+      touchStartX = e.changedTouches[0].clientX;
+      touchStartY = e.changedTouches[0].clientY;
     }, { passive: true });
 
     videoModal.addEventListener('touchend', e => {
-      touchEndX = e.changedTouches[0].screenX;
-      touchEndY = e.changedTouches[0].screenY;
-      handleSwipe();
+      touchEndX = e.changedTouches[0].clientX;
+      touchEndY = e.changedTouches[0].clientY;
+      handleVerticalSwipe();
     }, { passive: true });
 
-    function handleSwipe() {
-      const diffX = touchEndX - touchStartX;
+    function handleVerticalSwipe() {
       const diffY = touchEndY - touchStartY;
+      const diffX = touchEndX - touchStartX;
 
-      // Horizontal swipe (Next / Prev dish)
-      if (Math.abs(diffX) > 60 && Math.abs(diffY) < 50) {
-        if (diffX < 0) {
-          nextVideoDish(); // Swipe left -> Next
-        } else {
-          prevVideoDish(); // Swipe right -> Prev
+      // If composition drawer is open and user swipes down, close drawer
+      if (compositionDrawer.classList.contains('open')) {
+        if (diffY > 60) {
+          closeDrawer();
         }
+        return;
       }
 
-      // Vertical swipe down (Close modal)
-      if (diffY > 100 && Math.abs(diffX) < 60 && !compositionDrawer.classList.contains('open')) {
-        closeVideoModal();
-      }
-
-      // Vertical swipe up (Open composition drawer)
-      if (diffY < -80 && Math.abs(diffX) < 60 && !compositionDrawer.classList.contains('open')) {
-        openDrawer();
+      // Vertical Swipe (TikTok / Reels Style: Up = Next, Down = Prev)
+      if (Math.abs(diffY) > 50 && Math.abs(diffY) > Math.abs(diffX)) {
+        if (diffY < 0) {
+          nextVideoDish(); // Swipe UP -> Next video
+        } else {
+          prevVideoDish(); // Swipe DOWN -> Previous video
+        }
       }
     }
 
-    // Keyboard support
+    // Mouse Wheel / Trackpad Scroll Support for Desktop (TikTok / Reels Web)
+    let isWheelThrottled = false;
+    videoModal.addEventListener('wheel', e => {
+      if (!videoModal.classList.contains('active') || compositionDrawer.classList.contains('open')) return;
+      if (isWheelThrottled) return;
+
+      if (e.deltaY > 30) {
+        isWheelThrottled = true;
+        nextVideoDish(); // Scroll Down -> Next
+        setTimeout(() => { isWheelThrottled = false; }, 400);
+      } else if (e.deltaY < -30) {
+        isWheelThrottled = true;
+        prevVideoDish(); // Scroll Up -> Prev
+        setTimeout(() => { isWheelThrottled = false; }, 400);
+      }
+    }, { passive: true });
+
+    // Keyboard support (Up/Down + Left/Right)
     window.addEventListener('keydown', e => {
       if (!videoModal.classList.contains('active')) return;
-      if (e.key === 'Escape') closeVideoModal();
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextVideoDish();
-      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') prevVideoDish();
+      if (e.key === 'Escape') {
+        if (compositionDrawer.classList.contains('open')) {
+          closeDrawer();
+        } else {
+          closeVideoModal();
+        }
+      }
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === 'PageDown') nextVideoDish();
+      if (e.key === 'ArrowUp' || e.key === 'ArrowLeft' || e.key === 'PageUp') prevVideoDish();
     });
+
   }
 
   // Run App
