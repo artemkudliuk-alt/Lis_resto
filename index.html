@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>LIS Restaurant & Lounge | Відео-меню Ribas Karpaty</title>
-  <meta name="description" content="Інтерактивне відео-меню ресторану LIS у готелі Ribas Karpaty (Буковель). Обирайте страви та коктейлі у динамічному відео-форматі 9:16.">
+  <title>LIS Restaurant & Lounge | Video Menu Ribas Karpaty</title>
+  <meta name="description" content="Interactive video menu of LIS restaurant at Ribas Karpaty hotel (Bukovel). Choose dishes and cocktails in a dynamic 9:16 video format.">
   <meta name="theme-color" content="#2B2436">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -57,13 +57,13 @@
 
         <!-- Right: Search Icon + Table Number -->
         <div class="header-right">
-          <button class="icon-btn" id="search-toggle-btn" aria-label="Пошук страви" title="Пошук">
+          <button class="icon-btn" id="search-toggle-btn" aria-label="Search dishes" title="Search">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
           </button>
-          <div class="table-tag">Стіл #12</div>
+          <div class="table-tag">Table #12</div>
         </div>
       </div>
 
@@ -77,13 +77,13 @@
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input type="text" id="dish-search-input" placeholder="Пошук за назвою або інгредієнтом..." autocomplete="off">
+          <input type="text" id="dish-search-input" placeholder="Search by name or ingredient..." autocomplete="off">
           <button class="clear-search-btn" id="clear-search-btn">&times;</button>
         </div>
       </div>
 
-      <!-- Single-Row Horizontal Scrollable Category Bar (Плашка категорій в одну строку зі скролом) -->
-      <nav class="categories-scroll-container" id="categories-scroll-container" aria-label="Категорії меню">
+      <!-- Single-Row Horizontal Scrollable Category Bar -->
+      <nav class="categories-scroll-container" id="categories-scroll-container" aria-label="Menu categories">
         <div class="categories-scroll-track" id="categories-scroll-track">
           <!-- Rendered via JavaScript -->
         </div>
@@ -94,8 +94,8 @@
     <main class="menu-content" id="menu-content">
       <!-- Section Banner / Intro -->
       <section class="section-intro" id="active-category-intro">
-        <h1 class="category-heading" id="category-title">Всі позиції меню</h1>
-        <span class="items-counter" id="items-counter">11 страв</span>
+        <h1 class="category-heading" id="category-title">Full menu</h1>
+        <span class="items-counter" id="items-counter">11 dishes</span>
       </section>
 
       <!-- Dishes Grid: 2 Columns Compact Tiles -->
@@ -113,7 +113,7 @@
           <path d="M14 14h7v7h-7z"></path>
           <path d="M3 14h7v7H3z"></path>
         </svg>
-        <span>Меню</span>
+        <span>Menu</span>
       </button>
       <button class="nav-item" id="open-video-stories-btn">
         <div class="stories-icon-wrapper">
@@ -121,14 +121,14 @@
             <polygon points="5 3 19 12 5 21 5 3"></polygon>
           </svg>
         </div>
-        <span>Відео-стрічка</span>
+        <span>Video feed</span>
       </button>
       <button class="nav-item" id="call-waiter-btn">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
           <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
         </svg>
-        <span>Офіціант</span>
+        <span>Waiter</span>
       </button>
     </nav>
   </div>
@@ -140,7 +140,7 @@
       <!-- Video Element -->
       <video id="modal-video" class="modal-video-player" playsinline loop preload="auto" poster="assets/images/burger_poster.jpg">
         <source src="assets/videos/burger_.mp4" type="video/mp4">
-        Ваш браузер не підтримує відео.
+        Your browser does not support video.
       </video>
 
       <!-- Photo Fallback Container (for items without video yet) -->
@@ -157,14 +157,14 @@
 
       <!-- Top Control Bar (Category Badge + Close Button) -->
       <div class="video-top-bar">
-        <button class="video-control-btn close-btn" id="close-video-modal" aria-label="Закрити">
+        <button class="video-control-btn close-btn" id="close-video-modal" aria-label="Close">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
         </button>
         
-        <div class="video-category-badge" id="modal-category-badge">ХОСПЕР</div>
+        <div class="video-category-badge" id="modal-category-badge">JOSPER</div>
 
         <!-- Spacer for balanced header -->
         <div style="width: 42px;"></div>
@@ -172,20 +172,20 @@
 
       <!-- Side Quick Interaction Buttons (Like / Share / Info) -->
       <div class="video-side-actions">
-        <button class="side-action-btn like-btn" id="like-dish-btn" aria-label="Додати в улюблене">
+        <button class="side-action-btn like-btn" id="like-dish-btn" aria-label="Add to favorites">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
           </svg>
           <span class="action-count" id="like-count">128</span>
         </button>
 
-        <button class="side-action-btn" id="info-drawer-btn" onclick="openDrawer()" aria-label="Склад страви">
+        <button class="side-action-btn" id="info-drawer-btn" onclick="openDrawer()" aria-label="Dish ingredients">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="12" y1="16" x2="12" y2="12"></line>
             <line x1="12" y1="8" x2="12.01" y2="8"></line>
           </svg>
-          <span>Склад</span>
+          <span>Details</span>
         </button>
       </div>
 
@@ -196,23 +196,23 @@
       <div class="video-bottom-overlay" id="video-bottom-overlay">
         <div class="overlay-main-info" id="overlay-tap-target" onclick="openDrawer()">
           <div class="overlay-tags" id="modal-tags">
-            <span class="tag-badge hit">🔥 Хіт ресторану</span>
+            <span class="tag-badge hit">🔥 Bestseller</span>
             <span class="tag-badge chef">👑 Chef's Choice</span>
           </div>
 
-          <h2 class="modal-dish-title" id="modal-dish-title">Фірмовий бургер LIS</h2>
+          <h2 class="modal-dish-title" id="modal-dish-title">LIS Signature Burger</h2>
           
           <div class="modal-dish-meta">
             <div class="modal-price-tag" id="modal-dish-price">530 ₴</div>
-            <div class="modal-weight-tag" id="modal-dish-weight">450 г</div>
+            <div class="modal-weight-tag" id="modal-dish-weight">450 g</div>
           </div>
 
           <p class="modal-short-desc" id="modal-dish-short-desc">
-            Соковита яловича котлета на вугіллі хоспера, карамелізована цибуля, чеддер та фірмові діпи.
+            Juicy Josper charcoal-grilled beef patty, caramelized onions, cheddar and signature dips.
           </p>
 
           <div class="expand-hint" id="expand-hint-btn" onclick="openDrawer()">
-            <span class="hint-text">Натисніть для перегляду повного складу</span>
+            <span class="hint-text">Tap to see full ingredients</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="18 15 12 9 6 15"></polyline>
             </svg>
@@ -228,46 +228,46 @@
         </div>
         
         <div class="drawer-header">
-          <h3 class="drawer-title" id="drawer-dish-name">Склад та особливості страви</h3>
+          <h3 class="drawer-title" id="drawer-dish-name">Dish ingredients & details</h3>
           <button class="close-drawer-btn" id="close-drawer-btn" onclick="closeDrawer()">&times;</button>
         </div>
 
 
         <div class="drawer-body">
           <div class="composition-section">
-            <h4 class="section-label">Інгредієнти та приготування:</h4>
+            <h4 class="section-label">Ingredients & preparation:</h4>
             <p class="composition-text" id="drawer-composition">
-              100% сортова яловичина на живому вугіллі хоспера (350°C), томлена карамелізована цибуля в бурштиновій глазурі, ніжний розплавлений сир чеддер, хрустка золотиста бріош, картопляні діпи, соус BBQ та трюфельний майонез.
+              100% premium beef grilled over live Josper charcoal (350°C), slow-cooked caramelized onions in amber glaze, melted cheddar, crispy golden brioche, potato dippers, BBQ sauce and truffle mayo.
             </p>
           </div>
 
           <div class="composition-section" id="drawer-allergens-section">
-            <h4 class="section-label">Алергени:</h4>
+            <h4 class="section-label">Allergens:</h4>
             <div class="allergens-list" id="drawer-allergens">
-              <span class="allergen-pill">Глютен</span>
-              <span class="allergen-pill">Лактоза</span>
-              <span class="allergen-pill">Гірчиця</span>
+              <span class="allergen-pill">Gluten</span>
+              <span class="allergen-pill">Lactose</span>
+              <span class="allergen-pill">Mustard</span>
             </div>
           </div>
 
           <div class="composition-section nutrition-section">
-            <h4 class="section-label">Енергетична цінність:</h4>
+            <h4 class="section-label">Nutrition facts:</h4>
             <div class="nutrition-grid" id="drawer-nutrition">
               <div class="nutrition-item">
                 <span class="val">840</span>
-                <span class="lbl">ккал</span>
+                <span class="lbl">kcal</span>
               </div>
               <div class="nutrition-item">
-                <span class="val">42 г</span>
-                <span class="lbl">білки</span>
+                <span class="val">42 g</span>
+                <span class="lbl">protein</span>
               </div>
               <div class="nutrition-item">
-                <span class="val">48 г</span>
-                <span class="lbl">жири</span>
+                <span class="val">48 g</span>
+                <span class="lbl">fat</span>
               </div>
               <div class="nutrition-item">
-                <span class="val">62 г</span>
-                <span class="lbl">вуглеводи</span>
+                <span class="val">62 g</span>
+                <span class="lbl">carbs</span>
               </div>
             </div>
           </div>
@@ -285,42 +285,42 @@
       <div class="concierge-header">
         <div class="concierge-icon-badge">🛎️</div>
         <div class="concierge-title-wrap">
-          <h3 class="concierge-title">Сервіс Столу #12</h3>
-          <p class="concierge-subtitle">Оберіть послугу, і персонал LIS миттєво підійде</p>
+          <h3 class="concierge-title">Table #12 Service</h3>
+          <p class="concierge-subtitle">Choose a service and LIS staff will come right over</p>
         </div>
         <button class="concierge-close" id="concierge-close-btn">&times;</button>
       </div>
 
       <div class="concierge-actions-grid">
-        <button class="concierge-action-btn" data-action="Покликати офіціанта">
+        <button class="concierge-action-btn" data-action="Call the waiter">
           <span class="action-emoji">🙋‍♂️</span>
-          <span class="action-name">Покликати офіціанта</span>
-          <span class="action-desc">Допомога з вибором чи замовлення</span>
+          <span class="action-name">Call the waiter</span>
+          <span class="action-desc">Help choosing or ordering</span>
         </button>
-        <button class="concierge-action-btn" data-action="Рахунок (Картка)">
+        <button class="concierge-action-btn" data-action="Bill (Card)">
           <span class="action-emoji">💳</span>
-          <span class="action-name">Рахунок карткою</span>
-          <span class="action-desc">Термінал для безконтактної оплати</span>
+          <span class="action-name">Pay by card</span>
+          <span class="action-desc">Contactless payment terminal</span>
         </button>
-        <button class="concierge-action-btn" data-action="Рахунок (Готівка)">
+        <button class="concierge-action-btn" data-action="Bill (Cash)">
           <span class="action-emoji">💵</span>
-          <span class="action-name">Рахунок готівкою</span>
-          <span class="action-desc">Розрахунок за столом</span>
+          <span class="action-name">Pay in cash</span>
+          <span class="action-desc">Settle at the table</span>
         </button>
-        <button class="concierge-action-btn" data-action="Консультація сомельє">
+        <button class="concierge-action-btn" data-action="Sommelier consultation">
           <span class="action-emoji">🍷</span>
-          <span class="action-name">Викликати сомельє</span>
-          <span class="action-desc">Підбір вина та настоянок</span>
+          <span class="action-name">Call the sommelier</span>
+          <span class="action-desc">Wine & liqueur pairing</span>
         </button>
-        <button class="concierge-action-btn" data-action="Оновити прибори та келихи">
+        <button class="concierge-action-btn" data-action="Refresh cutlery & glasses">
           <span class="action-emoji">🍴</span>
-          <span class="action-name">Оновити прибори</span>
-          <span class="action-desc">Нові келихи, прибори, серветки</span>
+          <span class="action-name">Refresh cutlery</span>
+          <span class="action-desc">New glasses, cutlery, napkins</span>
         </button>
-        <button class="concierge-action-btn" data-action="Теплий плед на терасу">
+        <button class="concierge-action-btn" data-action="Warm blanket for the terrace">
           <span class="action-emoji">🏔️</span>
-          <span class="action-name">Плед на терасу</span>
-          <span class="action-desc">Теплий карпатський плед</span>
+          <span class="action-name">Terrace blanket</span>
+          <span class="action-desc">Cozy Carpathian blanket</span>
         </button>
       </div>
     </div>
@@ -329,7 +329,7 @@
   <!-- Toast Notification Modal for Waiter Call -->
   <div class="toast-notification" id="toast">
     <span class="toast-icon">🛎️</span>
-    <span class="toast-text" id="toast-text">Офіціанта викликано до столу #12!</span>
+    <span class="toast-text" id="toast-text">Waiter called to table #12!</span>
   </div>
 
 

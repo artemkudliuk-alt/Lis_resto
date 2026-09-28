@@ -6,45 +6,45 @@
   // ==========================================================================
 
   const MENU_CATEGORIES = [
-    { id: 'all', name: 'ВСЕ МЕНЮ', icon: '🍽️', desc: 'Повний каталог страв та авторських напоїв ресторану LIS' },
-    { id: 'hosper', name: 'ХОСПЕР', icon: '🔥', desc: 'Фірмові страви з закритої печі на натуральному карпатському вугіллі (350°C)' },
-    { id: 'cocktails', name: 'КОКТЕЙЛІ', icon: '🍸', desc: 'Авторські та класичні коктейлі від шеф-бармена' },
-    { id: 'kitchen', name: 'КУХНЯ', icon: '🥘', desc: 'Автентичні карпатські та європейські страви' },
-    { id: 'starters', name: 'ЗАКУСКИ', icon: '🥗', desc: 'Легкі закуски та стартери для ідеального початку вечері' },
-    { id: 'nalyvky', name: 'НАЛИВКИ', icon: '🍷', desc: 'Крафтові карпатські настоянки та дистиляти' }
+    { id: 'all', name: 'FULL MENU', icon: '🍽️', desc: 'Complete catalog of LIS dishes and signature drinks' },
+    { id: 'hosper', name: 'JOSPER', icon: '🔥', desc: 'Signature dishes from the closed charcoal oven on natural Carpathian charcoal (350°C)' },
+    { id: 'cocktails', name: 'COCKTAILS', icon: '🍸', desc: 'Signature and classic cocktails by our head bartender' },
+    { id: 'kitchen', name: 'KITCHEN', icon: '🥘', desc: 'Authentic Carpathian and European dishes' },
+    { id: 'starters', name: 'STARTERS', icon: '🥗', desc: 'Light bites and starters for the perfect start to the evening' },
+    { id: 'nalyvky', name: 'LIQUEURS', icon: '🍷', desc: 'Craft Carpathian liqueurs and spirits' }
   ];
 
   const MENU_ITEMS = [
     {
       id: 'burger-lis',
       categoryId: 'hosper',
-      name: 'Фірмовий бургер LIS з карамелізованою цибулею',
+      name: 'LIS Signature Burger with Caramelized Onions',
       price: 530,
-      weight: '450 г',
+      weight: '450 g',
       hasVideo: true,
       videoUrl: 'assets/videos/burger_.mp4',
       posterUrl: 'assets/images/burger_poster.jpg?v=5',
-      shortDesc: 'Соковита яловича котлета на вугіллі хоспера, томлена карамелізована цибуля, сир чеддер, хрусткі діпи та соуси.',
-      composition: '100% сортова яловичина на живому деревному вугіллі закритої печі хоспер (350°C), томлена карамелізована цибуля в бурштиновій глазурі, ніжний розплавлений сир чеддер, тепла золотиста булочка бріош, хрусткі картопляні діпи, фірмовий соус BBQ та домашній трюфельний майонез.',
-      allergens: ['Глютен', 'Лактоза', 'Гірчиця', 'Кунжут'],
-      nutrition: { kcal: 840, protein: '42 г', fat: '48 г', carbs: '62 г' },
+      shortDesc: 'Juicy Josper charcoal-grilled beef patty, slow-cooked caramelized onions, cheddar, crispy dippers and sauces.',
+      composition: '100% premium beef grilled over live wood charcoal in a closed Josper oven (350°C), slow-cooked caramelized onions in amber glaze, melted cheddar, a warm golden brioche bun, crispy potato dippers, signature BBQ sauce and house-made truffle mayo.',
+      allergens: ['Gluten', 'Lactose', 'Mustard', 'Sesame'],
+      nutrition: { kcal: 840, protein: '42 g', fat: '48 g', carbs: '62 g' },
       tags: ['hit', 'chef', 'video'],
       likes: 248
     },
     {
       id: 'negroni',
       categoryId: 'cocktails',
-      name: 'Коктейль Negroni',
+      name: 'Negroni',
       price: 350,
-      weight: '150 мл',
+      weight: '150 ml',
       hasVideo: true,
 
       videoUrl: 'assets/videos/Negroni.mp4',
       posterUrl: 'assets/images/negroni_poster.jpg?v=5',
-      shortDesc: 'Преміальний джин Gordon\'s London Dry, вермут Cinzano Rosso, біттер Campari, монолітний куб льоду та цедра апельсина.',
-      composition: 'Культовий класичний аперитив: лондонський сухий джин Gordon\'s London Dry, благородний італійський червоний вермут Cinzano Rosso, гірко-солодкий біттер Campari, куб кришталево чистого ручного льоду без бульбашок повітря та свіжі ефірні олії апельсинового твісту.',
-      allergens: ['Сульфіти', 'Цитрус'],
-      nutrition: { kcal: 195, protein: '0 г', fat: '0 г', carbs: '12 г' },
+      shortDesc: 'Premium Gordon\'s London Dry gin, Cinzano Rosso vermouth, Campari bitter, a solid ice cube and orange zest.',
+      composition: 'An iconic classic aperitif: Gordon\'s London Dry gin, fine Italian red vermouth Cinzano Rosso, bittersweet Campari, a crystal-clear hand-cut ice cube with no air bubbles and fresh oils from an orange twist.',
+      allergens: ['Sulfites', 'Citrus'],
+      nutrition: { kcal: 195, protein: '0 g', fat: '0 g', carbs: '12 g' },
       tags: ['hit', 'chef', 'video'],
       likes: 189
     },
@@ -53,14 +53,14 @@
       categoryId: 'cocktails',
       name: 'Aperol Spritz',
       price: 310,
-      weight: '255 мл',
+      weight: '255 ml',
       hasVideo: false,
       videoUrl: null,
       posterUrl: 'assets/images/aperol_spritz.jpg?v=5',
-      shortDesc: 'Легкий та ігристий коктейль з лікером Aperol, Prosecco, содовою та свіжим апельсином.',
-      composition: 'Оригінальний італійський лікер Aperol Aperitivo, сухе ігристе вино Prosecco, гірська содова, свіжовичавлений апельсиновий сік, скибка соковитого апельсина, монолітний лід.',
-      allergens: ['Сульфіти', 'Цитрус'],
-      nutrition: { kcal: 160, protein: '0 г', fat: '0 г', carbs: '14 г' },
+      shortDesc: 'A light, sparkling cocktail with Aperol, Prosecco, soda and fresh orange.',
+      composition: 'Original Italian Aperol Aperitivo, dry sparkling Prosecco, mountain soda, freshly squeezed orange juice, a slice of juicy orange, solid ice.',
+      allergens: ['Sulfites', 'Citrus'],
+      nutrition: { kcal: 160, protein: '0 g', fat: '0 g', carbs: '14 g' },
       tags: ['hit'],
       likes: 142
     },
@@ -69,14 +69,14 @@
       categoryId: 'cocktails',
       name: 'Clover Club',
       price: 300,
-      weight: '120 мл',
+      weight: '120 ml',
       hasVideo: false,
       videoUrl: null,
       posterUrl: 'assets/images/clover_club.jpg?v=5',
-      shortDesc: 'Витончений малиновий коктейль на джині Gordon\'s з лимонним фрешем та оксамитовою піною.',
-      composition: 'Джин Gordon\'s London Dry, натуральне свіже малинове пюре, лимонний фреш, цукровий сироп, збита шовковиста пінка та свіжі лісові ягоди малини з м\'ятою.',
-      allergens: ['Яєчний білок'],
-      nutrition: { kcal: 175, protein: '2 г', fat: '0 г', carbs: '16 г' },
+      shortDesc: 'An elegant raspberry cocktail with Gordon\'s gin, fresh lemon juice and velvety foam.',
+      composition: 'Gordon\'s London Dry gin, fresh raspberry purée, fresh lemon juice, sugar syrup, silky whipped foam and fresh wild raspberries with mint.',
+      allergens: ['Egg white'],
+      nutrition: { kcal: 175, protein: '2 g', fat: '0 g', carbs: '16 g' },
       tags: ['chef'],
       likes: 115
     },
@@ -85,14 +85,14 @@
       categoryId: 'cocktails',
       name: 'Old Fashioned',
       price: 300,
-      weight: '150 мл',
+      weight: '150 ml',
       hasVideo: false,
       videoUrl: null,
       posterUrl: 'assets/images/old_fashioned.jpg?v=5',
-      shortDesc: 'Американський бурбон Wild Turkey 101, біттер Angostura, тростинний цукор та дубовий дим.',
-      composition: 'Витриманий міцний бурбон Wild Turkey 101, краплі ароматичного біттера Angostura, тростинний сироп Demerara, спіраль цедри сицилійського апельсина, подача під ковпаком з димом дубової тріски.',
-      allergens: ['Цитрус'],
-      nutrition: { kcal: 210, protein: '0 г', fat: '0 г', carbs: '8 г' },
+      shortDesc: 'American bourbon Wild Turkey 101, Angostura bitters, cane sugar and oak smoke.',
+      composition: 'Aged high-proof Wild Turkey 101 bourbon, dashes of aromatic Angostura bitters, Demerara cane syrup, a Sicilian orange peel spiral, served under a cloche with oak-chip smoke.',
+      allergens: ['Citrus'],
+      nutrition: { kcal: 210, protein: '0 g', fat: '0 g', carbs: '8 g' },
       tags: ['hit'],
       likes: 97
     },
@@ -101,14 +101,14 @@
       categoryId: 'cocktails',
       name: 'Whisky Sour',
       price: 310,
-      weight: '180 мл',
+      weight: '180 ml',
       hasVideo: false,
       videoUrl: null,
       posterUrl: 'assets/images/whisky_sour.jpg?v=5',
-      shortDesc: 'Багатий смак бурбону Jim Beam у поєднанні з лимонним фрешем та біттером Angostura.',
-      composition: 'Бурбон Jim Beam, свіжовичавлений сік лимона, тростинний цукровий сироп, ароматичний біттер Angostura, коктейльна мараскінова вишня та апельсиновий твіст.',
-      allergens: ['Цитрус'],
-      nutrition: { kcal: 185, protein: '0 г', fat: '0 г', carbs: '11 г' },
+      shortDesc: 'Rich Jim Beam bourbon paired with fresh lemon juice and Angostura bitters.',
+      composition: 'Jim Beam bourbon, freshly squeezed lemon juice, cane sugar syrup, aromatic Angostura bitters, a maraschino cherry and an orange twist.',
+      allergens: ['Citrus'],
+      nutrition: { kcal: 185, protein: '0 g', fat: '0 g', carbs: '11 g' },
       tags: [],
       likes: 83
     },
@@ -117,78 +117,78 @@
       categoryId: 'cocktails',
       name: 'PornStar Martini',
       price: 320,
-      weight: '180 мл',
+      weight: '180 ml',
       hasVideo: false,
       videoUrl: null,
       posterUrl: 'assets/images/pornstar.jpg?v=5',
-      shortDesc: 'Ванільна горілка Absolut, маракуйя, манго, лимонний фреш та шот холодного Prosecco.',
-      composition: 'Ніжна ванільна горілка Absolut Vanilla, натуральна м\'якоть маракуйї та пюре стиглого манго, лимонний фреш, половинка свіжої маракуйї з вогнем та подача з окремим охолодженим шотом ігристого вина Prosecco.',
-      allergens: ['Сульфіти'],
-      nutrition: { kcal: 230, protein: '1 г', fat: '0 г', carbs: '22 г' },
+      shortDesc: 'Absolut vanilla vodka, passion fruit, mango, fresh lemon juice and a shot of chilled Prosecco.',
+      composition: 'Smooth Absolut Vanilla vodka, natural passion fruit pulp and ripe mango purée, fresh lemon juice, a flamed passion fruit half, served with a separate chilled shot of sparkling Prosecco.',
+      allergens: ['Sulfites'],
+      nutrition: { kcal: 230, protein: '1 g', fat: '0 g', carbs: '22 g' },
       tags: ['hit'],
       likes: 165
     },
     {
       id: 'banosh',
       categoryId: 'kitchen',
-      name: 'Банош по-гуцульськи з бринзою та білими грибами',
+      name: 'Hutsul Banosh with Brynza and Porcini',
       price: 290,
-      weight: '320 г',
+      weight: '320 g',
       hasVideo: false,
       videoUrl: null,
       posterUrl: 'assets/images/banosh.jpg?v=5',
-      shortDesc: 'Традиційна кукурудзяна каша на домашній сметані з овечою бринзою, білими грибами та шкварками.',
-      composition: 'Кукурудзяна крупа дрібного помелу, томлена у чавунному казані на домашній сметані та вершках, витримана карпатська овеча бринза, обсмажені карпатські білі гриби у вершковому маслі, золотисті шкварки та свіжа зелень кропу.',
-      allergens: ['Лактоза'],
-      nutrition: { kcal: 620, protein: '18 г', fat: '44 г', carbs: '46 г' },
+      shortDesc: 'Traditional cornmeal porridge cooked in homemade sour cream with sheep brynza cheese, porcini mushrooms and cracklings.',
+      composition: 'Fine cornmeal slow-cooked in a cast-iron pot with homemade sour cream and cream, aged Carpathian sheep brynza, Carpathian porcini sautéed in butter, golden cracklings and fresh dill.',
+      allergens: ['Lactose'],
+      nutrition: { kcal: 620, protein: '18 g', fat: '44 g', carbs: '46 g' },
       tags: ['hit', 'chef'],
       likes: 210
     },
     {
       id: 'deruni',
       categoryId: 'kitchen',
-      name: 'Деруни зі сметаною та білими грибами',
+      name: 'Potato Pancakes with Sour Cream and Porcini',
       price: 280,
-      weight: '300 г',
+      weight: '300 g',
       hasVideo: false,
       videoUrl: null,
       posterUrl: 'assets/images/deruni_smetana_griby.jpg?v=5',
-      shortDesc: 'Хрусткі картопляні деруни з вершковим соусом з карпатських білих грибів.',
-      composition: 'Відбірна молода картопля, цибуля, яйце, золотиста скоринка, ніжний вершково-сметанний соус з карпатськими білими грибами, свіжа петрушка.',
-      allergens: ['Лактоза', 'Глютен', 'Яйця'],
-      nutrition: { kcal: 490, protein: '12 г', fat: '32 г', carbs: '42 г' },
+      shortDesc: 'Crispy potato pancakes with a creamy Carpathian porcini sauce.',
+      composition: 'Select young potatoes, onion, egg, a golden crust, a delicate cream and sour cream sauce with Carpathian porcini, fresh parsley.',
+      allergens: ['Lactose', 'Gluten', 'Eggs'],
+      nutrition: { kcal: 490, protein: '12 g', fat: '32 g', carbs: '42 g' },
       tags: ['hit'],
       likes: 176
     },
     {
       id: 'duck-leg',
       categoryId: 'kitchen',
-      name: 'Качина ніжка конфі з яблучним пюре',
+      name: 'Duck Leg Confit with Apple Purée',
       price: 480,
-      weight: '350 г',
+      weight: '350 g',
       hasVideo: false,
       videoUrl: null,
       posterUrl: 'assets/images/duck_leg_original.jpg?v=5',
-      shortDesc: 'Ніжна качина ніжка тривалого томлення з пюре із запечених яблук та ягідним соусом.',
-      composition: 'Ніжка фермерської качки тривалого томлення конфі за низької температури, оксамитове пюре із запечених карпатських яблук з корицею, густий деміглас з лісовою ожиною та чебрецем.',
+      shortDesc: 'Tender slow-cooked duck leg with baked apple purée and berry sauce.',
+      composition: 'Farm duck leg confit, slow-cooked at low temperature, velvety purée of baked Carpathian apples with cinnamon, rich demi-glace with wild blackberries and thyme.',
       allergens: [],
-      nutrition: { kcal: 580, protein: '36 г', fat: '38 г', carbs: '24 г' },
+      nutrition: { kcal: 580, protein: '36 g', fat: '38 g', carbs: '24 g' },
       tags: ['chef'],
       likes: 134
     },
     {
       id: 'turkey-cutlet',
       categoryId: 'kitchen',
-      name: 'Котлета з індички з вершковим картопляним пюре',
+      name: 'Turkey Cutlet with Creamy Mashed Potatoes',
       price: 340,
-      weight: '320 г',
+      weight: '320 g',
       hasVideo: false,
       videoUrl: null,
       posterUrl: 'assets/images/kotleta_induk.jpg?v=5',
-      shortDesc: 'Соковита парова котлета з філе індички, ніжне пюре та соус із зеленого горошку.',
-      composition: 'Рублене філе індички, вершкове масло, повітряне картопляне пюре на вершках, крем-соус на основі солодкого молодого горошку, мікрозелень.',
-      allergens: ['Лактоза', 'Глютен'],
-      nutrition: { kcal: 430, protein: '32 г', fat: '20 г', carbs: '34 г' },
+      shortDesc: 'Juicy steamed turkey fillet cutlet, smooth mash and green pea sauce.',
+      composition: 'Minced turkey fillet, butter, fluffy cream mashed potatoes, sweet young pea cream sauce, microgreens.',
+      allergens: ['Lactose', 'Gluten'],
+      nutrition: { kcal: 430, protein: '32 g', fat: '20 g', carbs: '34 g' },
       tags: [],
       likes: 92
     }
@@ -391,16 +391,16 @@
       dishesContainer.innerHTML = `
         <div style="grid-column: span 2; text-align: center; padding: 40px 20px; color: #8D98AE;">
           <div style="font-size: 36px; margin-bottom: 8px;">🔍</div>
-          <h3 style="font-family: var(--font-brand); color: var(--color-primary-navy);">Нічого не знайдено</h3>
-          <p style="font-size: 13px; margin-top: 4px;">Спробуйте змінити запит або обрати іншу категорію</p>
+          <h3 style="font-family: var(--font-brand); color: var(--color-primary-navy);">Nothing found</h3>
+          <p style="font-size: 13px; margin-top: 4px;">Try a different search or pick another category</p>
         </div>
       `;
       return;
     }
 
     dishesContainer.innerHTML = filtered.map((dish, index) => {
-      const hitBadge = dish.tags.includes('hit') ? `<span class="dish-tag hit">🔥 ХІТ</span>` : '';
-      const chefBadge = dish.tags.includes('chef') ? `<span class="dish-tag chef">👑 ШЕФ</span>` : '';
+      const hitBadge = dish.tags.includes('hit') ? `<span class="dish-tag hit">🔥 HIT</span>` : '';
+      const chefBadge = dish.tags.includes('chef') ? `<span class="dish-tag chef">👑 CHEF</span>` : '';
       
       const mediaHtml = dish.hasVideo ? `
         <img src="${dish.posterUrl}" alt="${dish.name}" loading="lazy">
@@ -438,9 +438,7 @@
 
 
   function getWordEnding(num) {
-    if (num === 1) return 'страва';
-    if (num >= 2 && num <= 4) return 'страви';
-    return 'страв';
+    return num === 1 ? 'dish' : 'dishes';
   }
 
   // ==========================================================================
@@ -505,7 +503,7 @@
     modalCategoryBadge.innerText = cat ? cat.name : 'LIS';
 
     modalTags.innerHTML = `
-      ${dish.tags.includes('hit') ? '<span class="tag-badge hit">🔥 Хіт</span>' : ''}
+      ${dish.tags.includes('hit') ? '<span class="tag-badge hit">🔥 Hit</span>' : ''}
       ${dish.tags.includes('chef') ? '<span class="tag-badge chef">👑 Chef\'s Choice</span>' : ''}
     `;
 
@@ -523,10 +521,10 @@
     
     if (dish.nutrition) {
       drawerNutrition.innerHTML = `
-        <div class="nutrition-item"><span class="val">${dish.nutrition.kcal}</span><span class="lbl">ккал</span></div>
-        <div class="nutrition-item"><span class="val">${dish.nutrition.protein}</span><span class="lbl">білки</span></div>
-        <div class="nutrition-item"><span class="val">${dish.nutrition.fat}</span><span class="lbl">жири</span></div>
-        <div class="nutrition-item"><span class="val">${dish.nutrition.carbs}</span><span class="lbl">вуглеводи</span></div>
+        <div class="nutrition-item"><span class="val">${dish.nutrition.kcal}</span><span class="lbl">kcal</span></div>
+        <div class="nutrition-item"><span class="val">${dish.nutrition.protein}</span><span class="lbl">protein</span></div>
+        <div class="nutrition-item"><span class="val">${dish.nutrition.fat}</span><span class="lbl">fat</span></div>
+        <div class="nutrition-item"><span class="val">${dish.nutrition.carbs}</span><span class="lbl">carbs</span></div>
       `;
     }
 
@@ -751,7 +749,7 @@
       if (likeDishBtn.classList.contains('liked')) {
         dish.likes += 1;
         likeCount.innerText = dish.likes;
-        showToast('❤️ Додано в улюблені страви!');
+        showToast('❤️ Added to favorites!');
       } else {
         dish.likes = Math.max(0, dish.likes - 1);
         likeCount.innerText = dish.likes;
@@ -812,9 +810,9 @@
       conciergeModal.addEventListener('click', e => {
         const btn = e.target.closest('.concierge-action-btn');
         if (!btn) return;
-        const action = btn.dataset.action || 'Виклик офіціанта';
+        const action = btn.dataset.action || 'Waiter call';
         navigator.vibrate?.([30, 40, 30]);
-        showToast(`🛎️ Запит: «${action}» надіслано персоналу (Стіл #12)`);
+        showToast(`🛎️ Request “${action}” sent to staff (Table #12)`);
         closeConciergeModal();
       });
     }
@@ -833,7 +831,7 @@
           likeDishBtn.classList.add('liked');
           dish.likes += 1;
           likeCount.innerText = dish.likes;
-          showToast('❤️ Додано в улюблені страви!');
+          showToast('❤️ Added to favorites!');
         }
       }
       lastTapTime = currentTime;
